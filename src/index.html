@@ -14,16 +14,16 @@
           <i class="fas fa-bars"></i>
         </label>
         <ul>
-          <li><a class="active" href="#">Inicio</a></li>
-          <li><a href="#">Personajes</a></li>
+          <li id="mostrarI"><a class="active" id="inicio" href="#">Inicio</a></li>
+          <li id="mostrarPersonaje"><a href="#">Personajes</a></li>
           <li><a href="#">Hechizos</a></li>
           <li><a href="#">Pociones</a></li>
         </ul>
       </nav>
 
     </header>
+    <section id="mostrarInicio">
     <main>
-    <section></section>
     <h1>Potterica Zone Perú</h1>
 
     <p>Bienvenidas a Potterrica Zone Perú, un lugar donde podrás encontrar información sobre los personajes, hechizos y pociones del mundo mágico de la Saga de Harry Potter.
@@ -33,7 +33,14 @@
       Disfruta de la información que hemos creado con mucho cariño para ti.</p>
     </main>
     <footer>© 2022 Gabriela Córdova - Liseth Lira - Joselyn Condori - Todo los derechos reservados</footer>
-    
+     </section>
+
+      <section id="mostrarPersonajes">  
+          <div class="personajesContainer"> 
+          <div id="personajes"></div>
+          </div> 
+        </section>  
+     
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>

@@ -1,11 +1,13 @@
 body{
-    background:#000000;
+    background-color:#000000;
     padding: 0;
     margin: 0;
-    background: url("https://www.wallpapertip.com/wmimgs/5-58831_harry-potter-wallpaper-pc.jpg") no-repeat;
+    background: url("https://www.wallpapertip.com/wmimgs/5-58831_harry-potter-wallpaper-pc.jpg");
     background-size: contain;
     background-position: center;
+    background-attachment: fixed;
     height: 100vh;
+    cursor: url(varita-magica4.png), pointer;
 }
 
 nav{
@@ -44,7 +46,7 @@ nav ul li a{
     box-sizing: border-box;
 }
 
-li a.active, li a:hover{
+li a:hover{
     background: #4D4C7D;
     transition: .5s;
 }
@@ -61,17 +63,7 @@ li a.active, li a:hover{
     display: none;
 }
 
-/*#castillo{
-    background-size: cover;
-    background-position: center center;
-    height: calc(100vh - 80px);
-}*/
-
 main{
-    /*
-    background: url("https://www.wallpapertip.com/wmimgs/5-58831_harry-potter-wallpaper-pc.jpg") no-repeat;
-    background-size: contain;
-    background-position: center center;*/
     height: calc(100vh - 80px - 80px);
 }
 
@@ -149,7 +141,6 @@ p{
     align-items: center;
     
     color: #FFFFFF;
-    
 }
 
 footer{
@@ -167,3 +158,121 @@ footer{
 
     color: #D8B9C3;
 }
+
+.personajesContainer{
+  display:flex;
+  justify-content: center;
+  width:auto;
+  height:auto;
+  margin: 40px 60px;
+}
+
+#personajes{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  width:auto;
+  height:auto;
+  justify-content: center; 
+}
+
+.divPersonajes {
+  background-color: #D8B9C3;
+  color: #0F044C; 
+  padding: 20px;
+  text-align:center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  transition: background-color .5s;
+  display: inline;
+}
+
+.nombrePersonajes{
+  background-color: #D8B9C3;
+  color: #0F044C;
+  height: auto;
+  width: auto;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.divBtn{
+  background-color: #D8B9C3;
+  height: 30px;
+  width:200px;
+  text-align:center;
+  display: flex;
+  justify-content: space-between;
+  margin-top:20px;
+}
+
+.btnPatronus{
+  background-color: #4D4C7D;
+  border-radius: 0.3rem;
+  border: none;
+  height: 2rem;
+  width: 6rem;
+  font-weight: bold;
+  text-align:center;
+  color: white;
+  cursor: pointer;
+
+}
+.btnDatos{
+  background-color: #4D4C7D;
+  border-radius: 0.3rem;
+  border: none;
+  color: white;
+  height: 2rem;
+  width: 6rem;
+  font-weight: bold;
+  text-align: center ;
+  cursor: pointer;
+}
+
+.patronusDiv{
+  position:fixed;
+  background-color: #363062;
+  color: #D8B9C3;
+  height: 200px;
+  width: auto;
+  margin: 40px 60px;
+  display: flex;
+  padding: 20px;
+  border-radius: 0.3rem;
+}
+
+.datosDiv{
+  position:fixed;
+  background-color: #363062;
+  color: #D8B9C3;
+  height: 200px;
+  width: auto;
+  margin: 40px 60px;
+  display: flex;
+  padding: 20px;
+  border-radius: 0.3rem;
+}
+
+.cerrar{
+  margin: 0 7px;
+  height: 2rem;
+  width: 2rem;
+  float: right;
+  cursor: pointer; 
+}
+
+img{
+  height: 120px;
+  width: auto;
+  text-align:center;
+}
+
+.pintarOpcionNav{
+  background: #4D4C7D;
+}
+.despintarOpcionNav{
+  background:#363062;
+}
+  
