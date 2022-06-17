@@ -35,10 +35,29 @@
     <footer>© 2022 Gabriela Córdova - Liseth Lira - Joselyn Condori - Todo los derechos reservados</footer>
      </section>
 
-      <section id="mostrarPersonajes">  
-          <div class="personajesContainer"> 
+      <section id="mostrarPersonajes">
+        <div class="tituloP">
+          <h2>Personajes</h2>
+          <div class="todoOrdenar">
+         <button class="btnOrdenar" id="btnOrdenar">
+            <img class="imgOrdenar" src="ordenar.png">
+          </button>
+          <select name="orden" id="orden" class="orden">
+            <option value="">Seleccione uno:</option>
+            <option value="ordenarA" id="ordenarA" class="ord">A-Z</option>
+            <option value="ordenarD" id="ordenarD" class="ord">Z-A</option>
+          </select>
+          
+            </div>
+        </div>
+          <div class="personajesContainer" id="personajesContainer"> 
           <div id="personajes"></div>
           </div> 
+
+          <div class="persContainerOrdenado"> 
+          <div id="personajesOrdenados"></div>
+          </div> 
+        
         </section>  
      
     <div id="root"></div>
