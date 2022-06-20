@@ -1,278 +1,504 @@
 body{
-    background-color:#000000;
-    padding: 0;
-    margin: 0;
-    background: url("https://www.wallpapertip.com/wmimgs/5-58831_harry-potter-wallpaper-pc.jpg");
-    background-size: contain;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100vh;
-    cursor: url(varita-magica4.png), pointer;
+  background-color:#000000;
+  padding: 0;
+  margin: 0;
+  background: url("https://www.wallpapertip.com/wmimgs/5-58831_harry-potter-wallpaper-pc.jpg");
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  cursor: url(varita-magica4.png), pointer;
 }
 
 nav{
-    background: #363062;
-    height: 80px;
-    width: 100%;
+  background: #363062;
+  height: 80px;
+  width: 100%;
 }
 
 .enlace{
-    position: absolute;
-    padding: 20px 50px;
+  position: absolute;
+  padding: 20px 50px;
 }
 
 nav ul{
-    float: right;
-    margin: 0 7px;
+  float: right;
+  margin: 0 7px;
 }
 
 nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 10px;
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 10px;
 }
 
 nav ul li a{
-    color: #D8B9C3;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    padding: 7px 13px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+  color: #D8B9C3;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
 
 li a:hover{
-    background: #4D4C7D;
-    transition: .5s;
+  background: #4D4C7D;
+  transition: .5s;
 }
 .checkbtn{
-    font-size: 30px;
-    color: #fff;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
 }
 #check{
-    display: none;
+  display: none;
 }
 
 main{
-    height: calc(100vh - 80px - 80px);
+  height: calc(100vh - 80px - 80px);
 }
 
 @media (max-width: 952px){
-    .enlace{
-        padding-left: 20px;
-    }
-    nav ul li a{
-        font-size: 16px;
-    }
+  .enlace{
+      padding-left: 20px;
+  }
+  nav ul li a{
+      font-size: 16px;
+  }
 }
 
 @media (max-width: 858px){
-    .checkbtn{
-        display: block;
-    }
-    ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a{
-        font-size: 20px;
-    }
-    li a:hover, li a.active{
-        background: none;
-        color: red;
-    }
-    #check:checked ~ ul{
-        left:0;
-    }
+  .checkbtn{
+      display: block;
+  }
+  ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+  }
+  nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+  }
+  nav ul li a{
+      font-size: 20px;
+  }
+  li a:hover, li a.active{
+      background: none;
+      color: red;
+  }
+  #check:checked ~ ul{
+      left:0;
+  }
 }
 
 h1{
-    position: absolute;
-    width: 689px;
-    height: 97px;
-    left: 350px;
-    top: 60px;
+  position: absolute;
+  width: 689px;
+  height: 97px;
+  left: 350px;
+  top: 60px;
 
-    font-family: 'Vidaloka';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 80px;
-    line-height: 97px;
+  font-family: 'Vidaloka';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 97px;
 
-    color: #FFFDFE;
+  color: #FFFDFE;
 
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 p{
-    position: absolute;
-    width: 650px;
-    height: 362px;
-    left: 600px;
-    top: 140px;
-    
-    font-family: 'Benne';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    
-    color: #FFFFFF;
+  position: absolute;
+  width: 650px;
+  height: 362px;
+  left: 600px;
+  top: 140px;
+  
+  font-family: 'Benne';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  
+  color: #FFFFFF;
 }
 
 footer{
-    position: absolute;
-    background: #363062;
-    height: 80px;
-    width: 100%; 
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 29px;
-    margin: auto;
-
-    color: #D8B9C3;
+  position: absolute;
+  background: #363062;
+  height: 80px;
+  width: 100%; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+  margin: auto;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  color: #D8B9C3;
 }
 
+.tituloP{
+display: flex;
+  width:100%;
+  /*flex-direction: row;*/
+
+}
+
+h2{
+flex-grow: 10;
+color: #FFFDFE;
+font-family: 'Vidaloka';
+font-size: 60px;
+text-align: center;
+/*margin: 20px;*/
+padding-left: 170px;
+/*background-color:red;*/
+}
+
+.todoOrdenar{
+  display: flex;
+  flex-grow: 1;
+  
+  flex-direction: column;
+  justify-content:center;
+  float:right;
+ /* background-color:yellow;*/
+  margin: 20px;
+}
+.btnOrdenar{
+display: flex;
+float: right;
+justify-content:center;
+background-color: transparent;
+border: none;
+
+}
+.imgOrdenar{
+  width: 50px;
+  height:50px;
+ 
+}
+.orden{
+  display:none;
+  background-color: #D8B9C3;
+  color: #0F044C;
+  border-style: none;
+  font-family: 'Inter';
+  font-weight: bold;
+}
+
+.menuFiltros{
+    background-color: #4D4C7D;
+    display: flex;
+    width: 690px;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.filtros{
+color: white;
+}
+.filtros:hover{
+  color:#4D4C7D;
+  background-color:#D8B9C3; 
+ /* box-sizing: border-box;*/
+  border-radius: 3px;
+}
+
+.filtrosSelect{
+    display: flex;
+    width:auto;
+    height: 20px;
+    justify-content: center;
+    margin: 0px auto;
+}
+#mostrarPatronusoVarita{
+display: none;
+height: 10rem;
+width: 15rem;
+background-color: white;
+text-align: center;
+
+}
 .personajesContainer{
-  display:flex;
-  justify-content: center;
-  width:auto;
-  height:auto;
-  margin: 40px 60px;
+display:flex;
+justify-content: center;
+width:auto;
+height:auto;
+margin: 20px 60px;
+}
+
+.persContainerOrdenado{
+display:flex;
+justify-content: center;
+width:auto;
+height:auto;
+margin: 20px 60px;
+}
+.persContainerFiltrados{
+display:flex;
+justify-content: center;
+width:auto;
+height:auto;
+margin: 20px 60px;
 }
 
 #personajes{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-  width:auto;
-  height:auto;
-  justify-content: center; 
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+width:auto;
+height:auto;
+justify-content: center; 
+}
+
+#personajesOrdenados{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+width:auto;
+height:auto;
+justify-content: center; 
+}
+
+#personajesFiltrados{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+width:auto;
+height:auto;
+justify-content: center; 
 }
 
 .divPersonajes {
-  background-color: #D8B9C3;
-  color: #0F044C; 
-  padding: 20px;
-  text-align:center;
-  justify-content: space-between;
-  border-radius: 0.5rem;
-  transition: background-color .5s;
-  display: inline;
+background-color: #D8B9C3;
+color: #0F044C; 
+padding: 20px;
+text-align:center;
+justify-content: space-between;
+border-radius: 0.5rem;
+transition: background-color .5s;
+display: inline;
+/* font-family: 'Volkhov', sans-serif; */
+font-family: 'Vidaloka';
+font-weight: bold;
+opacity:0.9;
+font-size: 18px;
 }
 
 .nombrePersonajes{
-  background-color: #D8B9C3;
-  color: #0F044C;
-  height: auto;
-  width: auto;
-  text-align:center;
-  margin-bottom:20px;
+background-color: #D8B9C3;
+color: #0F044C;
+height: auto;
+width: auto;
+text-align:center;
+margin-bottom:20px;
 }
 
 .divBtn{
-  background-color: #D8B9C3;
-  height: 30px;
-  width:200px;
-  text-align:center;
-  display: flex;
-  justify-content: space-between;
-  margin-top:20px;
+background-color: #D8B9C3;
+height: 30px;
+width:200px;
+text-align:center;
+display: flex;
+justify-content: space-between;
+margin-top:20px;
 }
 
+
 .btnPatronus{
-  background-color: #4D4C7D;
-  border-radius: 0.3rem;
-  border: none;
-  height: 2rem;
-  width: 6rem;
-  font-weight: bold;
-  text-align:center;
-  color: white;
-  cursor: pointer;
+background-color: #4D4C7D;
+border-radius: 0.3rem;
+border: none;
+height: 2rem;
+width: 6rem;
+font-weight: bold;
+text-align:center;
+color: white;
+cursor: pointer;
 
 }
 .btnDatos{
-  background-color: #4D4C7D;
-  border-radius: 0.3rem;
-  border: none;
-  color: white;
-  height: 2rem;
-  width: 6rem;
-  font-weight: bold;
-  text-align: center ;
-  cursor: pointer;
+background-color: #4D4C7D;
+border-radius: 0.3rem;
+border: none;
+color: white;
+height: 2rem;
+width: 6rem;
+font-weight: bold;
+text-align: center ;
+cursor: pointer;
 }
 
 .patronusDiv{
-  position:fixed;
-  background-color: #363062;
-  color: #D8B9C3;
-  height: 200px;
-  width: auto;
-  margin: 40px 60px;
-  display: flex;
-  padding: 20px;
-  border-radius: 0.3rem;
+position:fixed;
+background-color: #363062;
+color: #D8B9C3;
+height: 200px;
+width: 400px;
+font-size:20px;
+margin: 20px 60px;
+display: flex;
+flex-direction: column;
+padding: 20px;
+border-radius: 0.3rem;
+text-align:center;
+}
+
+.divNomPatCerrar{
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
 }
 
 .datosDiv{
-  position:fixed;
-  background-color: #363062;
-  color: #D8B9C3;
-  height: 200px;
-  width: auto;
-  margin: 40px 60px;
-  display: flex;
-  padding: 20px;
-  border-radius: 0.3rem;
+position:fixed;
+background-color: #363062;
+color: #D8B9C3;
+height: 330px;
+width: 400px;
+display: flex;
+padding: 20px;
+font-size: 15px;
+border-radius: 0.3rem;
+justify-content: space-between;
+margin-top:-70px;
 }
 
 .cerrar{
-  margin: 0 7px;
-  height: 2rem;
-  width: 2rem;
-  float: right;
-  cursor: pointer; 
+margin: 0 7px;
+height: 2rem;
+width: 2rem;
+float: right; 
+cursor: pointer; 
 }
 
 img{
-  height: 120px;
-  width: auto;
-  text-align:center;
+height: 120px;
+width: auto;
+text-align:center;
 }
 
 .pintarOpcionNav{
-  background: #4D4C7D;
+background: #4D4C7D;
 }
 .despintarOpcionNav{
-  background:#363062;
+background:#363062;
 }
+
+#mostrarPersonajes{
+display: none;
+}
+
+#mostrarHechizos{
+display: none;
+}
+
+#mostrarPociones{
+display: none;
+}
+
+#hechizos{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+width:auto;
+height:auto;
+justify-content: center; 
+}
+
+.divHechizos {
+background-color: #D8B9C3;
+color: #0F044C; 
+padding: 20px;
+text-align:center;
+justify-content: space-between;
+border-radius: 0.5rem;
+transition: background-color .5s;
+display: inline;
+/* font-family: 'Volkhov', sans-serif; */
+width: 310px;
+height:auto;
+font-family: 'Vidaloka';
+font-weight: bold;
+opacity:0.9;
+font-size: 18px;
+}
+
+.datosDivHechizos{
+position:fixed;
+background-color: #363062;
+color: #D8B9C3;
+height: 400px;
+width: 600px;
+display: flex;
+padding: 20px;
+font-size: 15px;
+border-radius: 0.3rem;
+justify-content: space-between;
+margin-top:-70px;
+}
+
+.divPociones{
+  background-color: #D8B9C3;
+color: #0F044C; 
+padding: 20px;
+text-align:center;
+justify-content: space-between;
+border-radius: 0.5rem;
+transition: background-color .5s;
+display: inline;
+/* font-family: 'Volkhov', sans-serif; */
+width: 310px;
+height:auto;
+font-family: 'Vidaloka';
+font-weight: bold;
+opacity:0.9;
+font-size: 18px;
+}
+
+#pociones{
+  display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+width:auto;
+height:auto;
+justify-content: center; 
   
+}
+.descriDiv{
+  font-size: 15px;
+  font-family: 'Lato';
+  color:#363062
+  
+}
