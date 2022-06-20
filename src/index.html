@@ -16,8 +16,8 @@
         <ul>
           <li id="mostrarI"><a class="active" id="inicio" href="#">Inicio</a></li>
           <li id="mostrarPersonaje"><a href="#">Personajes</a></li>
-          <li><a href="#">Hechizos</a></li>
-          <li><a href="#">Pociones</a></li>
+          <li id="mostrarH"><a href="#">Hechizos</a></li>
+          <li id="mostrarP"><a href="#">Pociones</a></li>
         </ul>
       </nav>
 
@@ -43,22 +43,112 @@
             <img class="imgOrdenar" src="ordenar.png">
           </button>
           <select name="orden" id="orden" class="orden">
-            <option value="">Seleccione uno:</option>
+            <option>Seleccione uno:</option>
             <option value="ordenarA" id="ordenarA" class="ord">A-Z</option>
             <option value="ordenarD" id="ordenarD" class="ord">Z-A</option>
           </select>
-          
+    
             </div>
         </div>
+        
+        <div class="menuFiltros">
+            <label class="filtros">Casas</label>
+            <label class="filtros">Especies</label>
+            <label class="filtros">Género</label>
+            <label class="filtros">Ascendencia</label>
+          </div>
+        <div class="filtrosSelect">
+          <select name="casa" id="casa" class="casa">
+            <option>Seleccione una casa:</option>
+            <option value="Gryffindor">Gryffindor</option>
+            <option value="Ravenclaw">Ravenclaw</option>
+            <option value="Hufflepuff">Hufflepuff</option>
+            <option value="Slytherin">Slytherin</option>
+          </select>
+            <select name="especie" id="especie" class="especie">
+            <option>Seleccione especie:</option>
+            <option value="Human">Humana</option>
+            <option value="Werewolf (formerly Human)">Hombre Lobo</option>
+            <option value="Human (Seer)">Humana (Vidente)</option>
+            <option value="House-elf">Elfo doméstico</option>
+            <option value="Half-Human/Half-Giant">Mitad Humano mitad gigante</option>
+            <option value="Quarter-Veela">1/4 Sirena</option>
+            <option value="Human (Metamorphmagus)">Humano (Metamorphmagus)</option>
+            <option value="Human (Werewolf traits)">Humano/Hombre Lobo</option>           
+          </select>
+            <select name="genero" id="genero" class="genero">
+            <option>Seleccione género:</option>
+            <option value="Female">Femenino</option>
+            <option value="Male">Masculino</option>
+          </select>
+             <select name= "asc" id="asc" class="asc">
+            <option>Seleccione 
+ascendencia:</option>
+            <option value="Half-blood">Mestiza</option>
+            <option value="Pure-blood">Sangre Pura</option>
+            <option value="Muggle-born">Nacido de muggles</option>
+            <option value="Part-Human (Half-giant)">Parte humana (medio gigante)</option>
+            <option value="Muggle">Muggle</option>
+            <option value="Pure-blood or half-blood">Mestizo o Sangre Pura</option>
+            <option value="Pure-blood (possibly)">Sangre Pura (posiblemente)</option>
+            <option value="Quarter-Veela">1/4 Sirena</option>
+            <option value="Squib">Squib</option>
+          </select>
+            </div>
           <div class="personajesContainer" id="personajesContainer"> 
           <div id="personajes"></div>
           </div> 
 
-          <div class="persContainerOrdenado"> 
+          <div class="persContainerOrdenado" id="persContainerOrdenado"> 
           <div id="personajesOrdenados"></div>
           </div> 
+
+          <div class="persContainerFiltrados" id="persContainerFiltrados"> 
+          <div id="personajesFiltrados"></div>
+          </div> 
         
-        </section>  
+        </section>
+     
+        <section id="mostrarHechizos">
+           <div class="tituloP">
+          <h2>Hechizos</h2>
+          <div class="todoOrdenar">
+         <button class="btnOrdenar" id="btnOrdenarH">
+            <img class="imgOrdenar" src="ordenar.png">
+          </button>
+          <select name="orden" id="ordenH" class="orden">
+            <option>Seleccione uno:</option>
+            <option value="ordenarA" id="ordenarAH" class="ord">A-Z</option>
+            <option value="ordenarD" id="ordenarDH" class="ord">Z-A</option>
+          </select>
+    
+            </div>
+        </div>
+          <div class="hechizosContainer" id="hechizosContainer"> 
+          <div id="hechizos"></div>
+          </div> 
+          
+        </section>
+
+     <section id="mostrarPociones">
+           <div class="tituloP">
+          <h2>Pociones</h2>
+          <div class="todoOrdenar">
+         <button class="btnOrdenar" id="btnOrdenarP">
+            <img class="imgOrdenar" src="ordenar.png">
+          </button>
+          <select name="orden" id="ordenP" class="orden">
+            <option>Seleccione uno:</option>
+            <option value="ordenarA" id="ordenarAP" class="ord">A-Z</option>
+            <option value="ordenarD" id="ordenarDP" class="ord">Z-A</option>
+          </select>
+    
+            </div>
+        </div>
+          <div class="pocionesContainer" id="pocionesContainer"> 
+          <div id="pociones"></div>
+          </div> 
+        </section>
      
     <div id="root"></div>
     <script src="main.js" type="module"></script>
