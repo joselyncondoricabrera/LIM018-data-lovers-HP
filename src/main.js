@@ -76,6 +76,8 @@ let pos=[];
 //llamando al comboboX orden (ascendente,descendente)
 let orden = document.getElementById("orden");
 
+
+
 //EJECUTA EL COMBOBOX DE ACUERDO A LA SELECCION
 orden.addEventListener ("change", (e) =>{
   let res=e.target.selectedIndex;
@@ -205,7 +207,20 @@ crearCerrar(datosDiv);
 }
 
 let filtrarCasa=document.getElementById("casa");
+// llamando a todo los label filtros
+let labelCasa = document.getElementById("filtrosCasa");
+let labelEspecie = document.getElementById("filtrosEspecie");
+let labelGenero = document.getElementById("filtrosGenero");
+let labelAscende = document.getElementById("filtrosAscendencia");
+
 filtrarCasa.addEventListener('change', () => {
+ //pintar label cuando selecciona el select
+labelCasa.classList.add('pintarFiltros');
+//despintar los demas label
+labelEspecie.classList.remove('pintarFiltros');
+labelGenero.classList.remove('pintarFiltros');
+labelAscende.classList.remove('pintarFiltros');
+ 
 ocultarParaFiltrar();
 let casaVal=filtrarCasa.value;
 let filCasa=filterCasa(data.characters, casaVal);
@@ -219,6 +234,13 @@ crearDivs(filCasa,personajesFiltrados);
 
 let filtrarEspecie=document.getElementById("especie");
 filtrarEspecie.addEventListener('change', () => {
+  //pintar label cuando selecciona el select
+labelEspecie.classList.add('pintarFiltros');
+//despintar los demas label
+labelCasa.classList.remove('pintarFiltros');
+labelGenero.classList.remove('pintarFiltros');
+labelAscende.classList.remove('pintarFiltros');
+
 ocultarParaFiltrar();
 let especieVal=filtrarEspecie.value;
 let filEspecie=filterEspecie(data.characters, especieVal);
@@ -229,6 +251,14 @@ crearDivs(filEspecie,personajesFiltrados);
 
 let filtrarGenero=document.getElementById("genero");
 filtrarGenero.addEventListener('change', () => {
+  //pintar label cuando selecciona el select
+labelGenero.classList.add('pintarFiltros');
+//despintar los demas label
+labelCasa.classList.remove('pintarFiltros');
+labelEspecie.classList.remove('pintarFiltros');
+labelAscende.classList.remove('pintarFiltros');
+
+
 ocultarParaFiltrar();
 let generoVal=filtrarGenero.value;
 let filGenero=filterGenero(data.characters, generoVal);
@@ -241,6 +271,13 @@ crearDivs(filGenero,personajesFiltrados);
 
 let filtrarAsc=document.getElementById("asc");
 filtrarAsc.addEventListener('change', () => {
+  //pintar label cuando selecciona el select
+labelAscende.classList.add('pintarFiltros');
+//despintar los demas label
+labelCasa.classList.remove('pintarFiltros');
+labelEspecie.classList.remove('pintarFiltros');
+labelGenero.classList.remove('pintarFiltros');
+
   ocultarParaFiltrar();
   let ascVal=filtrarAsc.value;
 let filAsc=filterAscendencia(data.characters, ascVal);

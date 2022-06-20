@@ -215,19 +215,41 @@ border: none;
     display: flex;
     width: 690px;
     height: 40px;
-    justify-content: space-around;
+   /* justify-content: space-around;*/
     align-items: center;
     margin: 0px auto;
 }
 
 .filtros{
 color: white;
+
+
+/*margin-top: 20px;*/
+
+line-height: 40px;    
+text-align: center;
+height: 40px;
 }
+
+#filtrosCasa{
+ 
+  width: 150px;
+}
+#filtrosEspecie{
+  width: 195px;
+}
+#filtrosGenero{
+  width: 140px;
+}
+#filtrosAscendencia{
+  width: 204px;
+}
+
+
 .filtros:hover{
   color:#4D4C7D;
   background-color:#D8B9C3; 
- /* box-sizing: border-box;*/
-  border-radius: 3px;
+
 }
 
 .filtrosSelect{
@@ -412,6 +434,9 @@ background: #4D4C7D;
 }
 .despintarOpcionNav{
 background:#363062;
+}
+.pintarFiltros{
+  background-color: #D8B9C3;
 }
 
 #mostrarPersonajes{
