@@ -125,14 +125,6 @@ h1{
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-h2{
-color: #FFFDFE;
-font-family: 'Vidaloka';
-font-size: 60px;
-text-align: center;
-margin: 20px;
-}
-
 p{
   position: absolute;
   width: 650px;
@@ -169,34 +161,104 @@ footer{
 }
 
 .tituloP{
-display: inline;
-justify-content: center;
+  display: flex;
+  width:100%;
+  height: 100px;
+  /*flex-direction: row;*/
 }
 
+h2{
+  display: flex;
+  flex-grow: 10;
+  color: #FFFDFE;
+  font-family: 'Vidaloka';
+  font-size: 60px;
+  text-align: center;
+  /*margin: 20px;*/
+  padding-left: 450px;
+  margin: 20px;
+}
+
+.todoOrdenar{
+  display: flex;
+  flex-grow: 1;
+  
+  flex-direction: column;
+  justify-content:center;
+  float:right;
+ /* background-color:yellow;*/
+  margin: 20px;
+}
 .btnOrdenar{
 display: flex;
 float: right;
 justify-content:center;
 background-color: transparent;
 border: none;
-}
 
-.todoOrdenar{
-display: flex;
-flex-direction: column;
-justify-content:center;
-float: right;
 }
-
+.imgOrdenar{
+  width: 50px;
+  height:50px;
+ 
+}
 .orden{
-background-color: #D8B9C3;
-color: #0F044C;
-border-style: none;
-font-family: 'Inter';
-font-weight: bold;
+  display:none;
+  background-color: #D8B9C3;
+  color: #0F044C;
+  border-style: none;
+  font-family: 'Inter';
+  font-weight: bold;
 }
 
+.menuFiltros{
+    background-color: #4D4C7D;
+    display: flex;
+    width: 690px;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px auto;
+}
 
+.filtros{
+  color: white;
+  
+  
+  /*margin-top: 20px;*/
+  
+  line-height: 40px;    
+  text-align: center;
+  height: 40px;
+  }
+
+#filtrosCasa{
+ 
+  width: 150px;
+}
+#filtrosEspecie{
+  width: 195px;
+}
+#filtrosGenero{
+  width: 140px;
+}
+#filtrosAscendencia{
+  width: 204px;
+}
+
+.filtros:hover{
+  color:#4D4C7D;
+  background-color:#D8B9C3; 
+ /* box-sizing: border-box;*/
+}
+
+.filtrosSelect{
+    display: flex;
+    width:auto;
+    height: 20px;
+    justify-content: center;
+    margin: 0px auto;
+}
 #mostrarPatronusoVarita{
 display: none;
 height: 10rem;
@@ -220,6 +282,13 @@ width:auto;
 height:auto;
 margin: 20px 60px;
 }
+.persContainerFiltrados{
+display:flex;
+justify-content: center;
+width:auto;
+height:auto;
+margin: 20px 60px;
+}
 
 #personajes{
 display: flex;
@@ -232,6 +301,16 @@ justify-content: center;
 }
 
 #personajesOrdenados{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+width:auto;
+height:auto;
+justify-content: center; 
+}
+
+#personajesFiltrados{
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
@@ -333,7 +412,7 @@ padding: 20px;
 font-size: 15px;
 border-radius: 0.3rem;
 justify-content: space-between;
-margin-top:20px;
+margin-top:-30px;
 }
 
 .cerrar{
@@ -357,7 +436,95 @@ background: #4D4C7D;
 background:#363062;
 }
 
+.pintarFiltros{
+  background-color: #D8B9C3;
+}
+
 #mostrarPersonajes{
 display: none;
+}
 
+#mostrarHechizos{
+display: none;
+}
+
+#mostrarPociones{
+display: none;
+}
+
+#hechizos{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+width:auto;
+height:auto;
+justify-content: center; 
+}
+
+.divHechizos {
+background-color: #D8B9C3;
+color: #0F044C; 
+padding: 20px;
+text-align:center;
+justify-content: space-between;
+border-radius: 0.5rem;
+transition: background-color .5s;
+display: inline;
+/* font-family: 'Volkhov', sans-serif; */
+width: 310px;
+height:auto;
+font-family: 'Vidaloka';
+font-weight: bold;
+opacity:0.9;
+font-size: 18px;
+}
+
+.datosDivHechizos{
+position:fixed;
+background-color: #363062;
+color: #D8B9C3;
+height: 400px;
+width: 600px;
+display: flex;
+padding: 20px;
+font-size: 15px;
+border-radius: 0.3rem;
+justify-content: space-between;
+margin-top:-70px;
+}
+
+.divPociones{
+  background-color: #D8B9C3;
+color: #0F044C; 
+padding: 20px;
+text-align:center;
+justify-content: space-between;
+border-radius: 0.5rem;
+transition: background-color .5s;
+display: inline;
+/* font-family: 'Volkhov', sans-serif; */
+width: 310px;
+height:auto;
+font-family: 'Vidaloka';
+font-weight: bold;
+opacity:0.9;
+font-size: 18px;
+}
+
+#pociones{
+  display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+width:auto;
+height:auto;
+justify-content: center; 
+  
+}
+.descriDiv{
+  font-size: 15px;
+  font-family: 'Lato';
+  color:#363062
+  
 }

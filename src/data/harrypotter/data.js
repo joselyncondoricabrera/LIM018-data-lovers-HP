@@ -12,7 +12,7 @@ export default {
       "eye_color": "Bottle green",
       "wand": "11\", Holly, phoenix feather",
       "patronus": "Stag",
-      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/6/6e/PM_Patronusciervo.jpg/revision/latest?cb=20170203154413",
+      "imgPatronus":"https://img.artpal.com/168441/2-19-12-9-11-46-44m.jpg",
       "house": "Gryffindor",
       "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/harry-potter_/4661804-1-esl-ES/Harry-Potter_.jpg",
       "associated_groups": [
@@ -45,7 +45,7 @@ export default {
       "eye_color": "Blue",
       "wand": "12\", Ash, unicorn tail hair",
       "patronus": "Jack Russell terrier",
-      "imgPatronus":"https://cdn-e360.s3-sa-east-1.amazonaws.com/cms_rons-patronus-croppedjpg__L5cUJTaIJ2rRZvgNNmMpogEQhvG1NjUq3SWbK1Gq.jpeg",
+      "imgPatronus":"https://pm1.narvii.com/6207/920e63ed05a485361609aea75bfa037d89d19e7a_hq.jpg",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/ron-weasley_/4661779-1-esl-ES/Ron-Weasley_.jpg",
       "associated_groups": [
@@ -78,8 +78,7 @@ export default {
       "hair_color": "Brown",
       "eye_color": "Brown",
       "wand": "10¾\", vine wood, dragon heartstring",
-      "patronus": "Otter",
-      "imgPatronus":"",
+      "patronus": "Otter", "imgPatronus":"https://i.pinimg.com/originals/46/c9/da/46c9dad4dd0f61c5bb19efa53bdf20f0.jpg",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/hermione-granger_/4661799-1-esl-ES/Hermione-Granger_.jpg",
       "associated_groups": [
@@ -110,6 +109,7 @@ export default {
       "eye_color": "Black",
       "wand": "16\", Oak, unknown core",
       "patronus": "None",
+      "imgPatronus": "https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/rubeus-hagrid_/4661794-1-esl-ES/Rubeus-Hagrid_.jpg",
       "associated_groups": [
@@ -134,6 +134,7 @@ export default {
       "eye_color": "Blue",
       "wand": "Unknown length, wood and core (formerly)",
       "patronus": "Phoenix",
+      "imgPatronus":"https://pm1.narvii.com/7100/7544445547075efb3ee9ecba1ce5ade1dee79ebdr1-2048-1152v2_hq.jpg",
       "house": "Gryffindor",
        "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/albus-dumbledore_/4661774-1-esl-ES/Albus-Dumbledore_.jpg",
       "associated_groups": [
@@ -164,7 +165,8 @@ export default {
       "eye_color": "Grey",
       "wand": "10\", Hawthorn, unicorn hair (formerly)",
       "patronus": "None",
-      "house": "Malfoy family",
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
+      "house": "Slytherin",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/draco-malfoy_/4661784-1-esl-ES/Draco-Malfoy_.jpg",
       "associated_groups": [],
       "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
@@ -181,6 +183,7 @@ export default {
       "eye_color": null,
       "wand": "9½\", Fir, dragon heartstring",
       "patronus": "Cat",
+      "imgPatronus":"https://pm1.narvii.com/6207/4bf32d2e0fdb9fb26b0d01f3360dae7365a0b6b6_hq.jpg",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/minerva-mcgonagall_/4661789-1-esl-ES/Minerva-McGonagall_.jpg",
       "associated_groups": [
@@ -211,6 +214,7 @@ export default {
       "eye_color": "Black",
       "wand": "Unknown length, wood and core",
       "patronus": "Doe",
+      "imgPatronus":"https://pm1.narvii.com/6207/eca3624895ab03b681b4096ba3f193f227dbca36_hq.jpg",
       "house": "Slytherin",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/severus-snape_/4661809-1-esl-ES/Severus-Snape_.jpg",
       "associated_groups": [
@@ -239,6 +243,7 @@ export default {
       "eye_color": "Blue",
       "wand": "9\", Cherry, dragon heartstring",
       "patronus": "Non-corporeal",
+      "imgPatronus": "https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Ravenclaw",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/gilderoy-lockhart_/4661819-1-esl-ES/Gilderoy-Lockhart_.jpg",
       "associated_groups": [
@@ -264,6 +269,7 @@ export default {
       "eye_color": "Bright brown",
       "wand": "Unknown length, Yew, unknown core",
       "patronus": "Horse",
+      "imgPatronus":"https://i.pinimg.com/564x/49/b5/e8/49b5e8a073dc1065eac156b3c95efeae.jpg",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/ginny-weasley_/4661829-1-esl-ES/Ginny-Weasley_.jpg",
       "associated_groups": [
@@ -293,6 +299,7 @@ export default {
       "eye_color": "Grey",
       "wand": "Elm and dragon heartstring (formerly)",
       "patronus": "None",
+      "imgPatronus": "https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": "Malfoy family",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/lucius-malfoy_/4661814-1-esl-ES/Lucius-Malfoy_.jpg",
       "associated_groups": [],
@@ -310,6 +317,7 @@ export default {
       "eye_color": null,
       "wand": null,
       "patronus": null,
+      "imgPatronus": "https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/els-dursley/4661844-1-esl-ES/Els-Dursley.jpg",
       "associated_groups": ["Dursley family", "Grunnings"],
@@ -327,6 +335,7 @@ export default {
       "eye_color": null,
       "wand": null,
       "patronus": null,
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/els-dursley-2/4661834-1-esl-ES/Els-Dursley-2.jpg",
       "associated_groups": ["Evans family", "Dursley family"],
@@ -344,6 +353,7 @@ export default {
       "eye_color": "Blue",
       "wand": null,
       "patronus": null,
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/els-dursley-3/4661824-1-esl-ES/Els-Dursley-3.jpg",
       "associated_groups": ["Dursley family", "Evans family", "Smeltings Academy", "His gang (formerly)"],
@@ -361,6 +371,7 @@ export default {
       "eye_color": "Green",
       "wand": "Unknown length, wood and core",
       "patronus": "Weasel",
+      "imgPatronus":"http://pm1.narvii.com/6637/9f5bff2ebc858f495873ac8243359c482a3e02fc_00.jpg",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/arthur-weasley_/4661839-1-esl-ES/arthur-weasley_.jpg",
       "associated_groups": [
@@ -389,6 +400,7 @@ export default {
       "eye_color": "Bright brown",
       "wand": "Unknown length, wood and core",
       "patronus": "Non-corporeal",
+      "imgPatronus": "https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/molly_weasley_/4661849-1-esl-ES/Molly_Weasley_.jpg",
       "associated_groups": [
@@ -415,6 +427,7 @@ export default {
       "eye_color": "Grey",
       "wand": "Unknown length, wood and core",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Gryffindor",
       "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/sirius-black_/4661904-1-esl-ES/Sirius-Black_.jpg",
       "associated_groups": [
@@ -439,6 +452,7 @@ export default {
       "eye_color": "Green",
       "wand": "10¼\", Cypress, unicorn hair",
       "patronus": "Wolf",
+      "imgPatronus":"https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1/cdn/3dc7443a-2d4c-4ca1-844c-abe3f1741766/c92cb1c7-9ae1-43b4-8d85-b7ce25d2aeca_560_420.jpg",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/remus-lupin_/4661909-1-esl-ES/Remus-Lupin_.jpg",
       "associated_groups": [
@@ -466,6 +480,7 @@ export default {
       "eye_color": null,
       "wand": "Unknown 1st wand",
       "patronus": "None",
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/peter-pettigrew_/4661939-1-esl-ES/Peter-Pettigrew_.jpg",
       "associated_groups": [
@@ -494,6 +509,7 @@ export default {
       "eye_color": null,
       "wand": "Hazel and unicorn hair, 9½ inches, very flexible",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Ravenclaw",
       "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/sybil-trelawney_/4661924-1-esl-ES/Sybil-Trelawney_.jpg",
       "associated_groups": [
@@ -520,6 +536,7 @@ export default {
       "eye_color": null,
       "wand": "Father's wand (formerly)",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Gryffindor",
       "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/neville-longbottom_/4661929-1-esl-ES/Neville-Longbottom_.jpg",
       "associated_groups": [
@@ -552,6 +569,7 @@ export default {
       "eye_color": "Green",
       "wand": null,
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/madame-rosmerta_/4661934-1-esl-ES/madame-rosmerta_.jpg",
       "associated_groups": ["Three Broomsticks Inn", "Draco Malfoy (while under the Imperius Curse)"],
@@ -569,6 +587,7 @@ export default {
       "eye_color": null,
       "wand": "Unknown length, wood and core",
       "patronus": "Magpie",
+      "imgPatronus":"https://pm1.narvii.com/6328/94ace739552d9e817f1c890bc73e4f57ca7195c2_hq.jpg",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/gemelo_/4661914-1-esl-ES/gemelo_.jpg",
       "associated_groups": [
@@ -598,8 +617,9 @@ export default {
       "eye_color": null,
       "wand": "Unknown length, wood and core",
       "patronus": "Magpie",
+      "imgPatronus":"https://pm1.narvii.com/6328/94ace739552d9e817f1c890bc73e4f57ca7195c2_hq.jpg",
       "house": "Gryffindor",
-      "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/gemelo_/4661914-1-esl-ES/gemelo_.jpg",
+      "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/gemelo_/4661914-1-esl-ES/gemelo_.jpg",
       "associated_groups": [
         "Circle of Khanna",
         "Dumbledore's Army",
@@ -626,6 +646,7 @@ export default {
       "eye_color": "One dark, one electric blue",
       "wand": "Unknown length, wood and core",
       "patronus": "Non-corporeal",
+       "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Unknown",
        "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/alastor-ojoloco-moody_/4662003-1-esl-ES/Alastor-Ojoloco-Moody_.jpg",
       "associated_groups": [
@@ -650,6 +671,7 @@ export default {
       "eye_color": "Grey",
       "wand": "12¼\", Ash, unicorn hair",
       "patronus": null,
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": "Hufflepuff",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/cedric-diggory_/4661993-1-esl-ES/Cedric-Diggory_.jpg",
       "associated_groups": [
@@ -675,6 +697,7 @@ export default {
       "eye_color": "Dark",
       "wand": "Unknown length, wood and core",
       "patronus": "Swan",
+      "imgPatronus":"https://pm1.narvii.com/6207/f8fb7ad8f02ddea4069086cb4c71b7ce4cf7e7da_hq.jpg",
       "house": "Ravenclaw",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/cho-chang_/4661973-1-esl-ES/Cho-Chang_.jpg",
       "associated_groups": [
@@ -692,13 +715,14 @@ export default {
       "name": "Fleur Delacour",
       "birth": "Pre 30 October, 1977",
       "death": null,
-      "species": "1/4 Veela",
+      "species": "Quarter-Veela",
       "ancestry": "Quarter-Veela",
       "gender": "Female",
       "hair_color": "Silvery-blonde",
       "eye_color": "Dark blue",
       "wand": "9½\", Rosewood, veela hair",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": null,
       "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/fleur-delacour_/4661983-1-esl-ES/Fleur-Delacour_.jpg",
       "associated_groups": [
@@ -724,6 +748,7 @@ export default {
       "eye_color": "Dark",
       "wand": "10¼\", Hornbeam, dragon heartstring",
       "patronus": null,
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/viktor-krum_/4661968-1-esl-ES/Viktor-Krum_.jpg",
       "associated_groups": [
@@ -747,6 +772,7 @@ export default {
       "eye_color": null,
       "wand": "Unknown length, wood and core",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/rita-skeeter_/4661998-1-esl-ES/Rita-Skeeter_.jpg",
       "associated_groups": ["Daily Prophet", "Witch Weekly", "The Quibbler", "Order of the Phoenix (indirectly)"],
@@ -765,6 +791,7 @@ export default {
       "eye_color": null,
       "wand": "Harry Potter's wand (briefly)",
       "patronus": "None",
+      "imgPatronus": "https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/bartemius-crounch_/4661978-1-esl-ES/Bartemius-Crounch_.jpg",
       "associated_groups": ["Lord Voldemort", "Death Eaters", "Hogwarts School of Witchcraft and Wizardry"],
@@ -782,7 +809,8 @@ export default {
       "hair_color": "Bald (formerly black)",
       "eye_color": "Scarlet (formerly dark brown)",
       "wand": "13½\", Yew, phoenix feather core",
-      "patronus": "None",
+      "patronus": null,
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": "Slytherin",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/lord-voldemort_/4661988-1-esl-ES/Lord-Voldemort_.jpg",
       "associated_groups": [
@@ -809,6 +837,7 @@ export default {
       "eye_color": null,
       "wand": "12¾\", Walnut, dragon heartstring",
       "patronus": "None",
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": "House of Black",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/bellatrix-lestrange_/4663009-1-esl-ES/Bellatrix-Lestrange_.jpg",
       "associated_groups": [],
@@ -825,7 +854,7 @@ export default {
       "hair_color": "Mouse brown (formerly)",
       "eye_color": null,
       "wand": "8\", Birch, dragon heartstring (formerly)",
-      "patronus": "Persian cat",
+      "patronus": "Persian cat",      "imgPatronus":"https://pm1.narvii.com/6207/4bf32d2e0fdb9fb26b0d01f3360dae7365a0b6b6_hq.jpg",
       "house": "Slytherin",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/dolores-umbridge_/4663019-1-esl-ES/Dolores-Umbridge_.jpg",
       "associated_groups": [],
@@ -837,12 +866,13 @@ export default {
       "birth": "Pre 1964",
       "death": null,
       "species": "Human",
-      "ancestry": "Pure-blood or Half-blood (most likely)",
+      "ancestry": "Pure-blood or Half-blood",
       "gender": "Male",
       "hair_color": "Grey",
       "eye_color": null,
       "wand": "Unknown length, wood and core",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/cornelius_/4663014-1-esl-ES/CORNELIUS_.jpg", 
       "associated_groups": [
@@ -866,7 +896,7 @@ export default {
       "hair_color": "Dirty-blonde",
       "eye_color": "Pale silvery",
       "wand": "Unknown 1st wand",
-      "patronus": "Hare",
+      "patronus": "Hare",      "imgPatronus":"https://static.wikia.nocookie.net/harrypotter/images/f/f8/Patronus_Hare.jpg",
       "house": "Ravenclaw",
       "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/luna-lovegood_/4662994-1-esl-ES/Luna-Lovegood_.jpg",
       "associated_groups": [
@@ -891,7 +921,7 @@ export default {
       "hair_color": "Variable (biologically light brown))",
       "eye_color": "Variable (Dark)",
       "wand": "Unknown length, wood and core",
-      "patronus": "Jack Rabbit (pre 1995)",
+      "patronus": "Jack Rabbit (pre 1995)",      "imgPatronus":"https://i.pinimg.com/564x/8e/b6/e5/8eb6e5ee9678b81e53be9f59deb7eea8.jpg",
       "house": "Hufflepuff",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/nymphadora-tonks_/4662999-1-esl-ES/nymphadora-tonks_.jpg?resize=768:*",
       "associated_groups": [
@@ -919,6 +949,7 @@ export default {
       "eye_color": "Pale",
       "wand": null,
       "patronus": null,
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": null,
        "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/argus_/4663004-1-esl-ES/Argus_.jpg",
       "associated_groups": ["Hogwarts School of Witchcraft and Wizardry", "Inquisitorial Squad (formerly)", "Mrs Norris"],
@@ -936,6 +967,7 @@ export default {
       "eye_color": "Gooseberry",
       "wand": "10¼\", Cedar, dragon heartstring, fairly flexible",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Slytherin",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/horace-slughorn_/4663060-1-esl-ES/Horace-Slughorn_.jpg",
       "associated_groups": [
@@ -961,6 +993,7 @@ export default {
       "eye_color": "Blue",
       "wand": "Unknown 1st wand",
       "patronus": null,
+      "imgPatronus": "https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": "House of Black",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/narcissa_/4663065-1-esl-ES/narcissa_.jpg",
       "associated_groups": [],
@@ -978,6 +1011,7 @@ export default {
       "eye_color": null,
       "wand": "Unknown length, wood and core",
       "patronus": "None",
+      "imgPatronus": "https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/fenrir_/4663070-1-esl-ES/fenrir_.jpg",
       "associated_groups": ["Lord Voldemort", "Death Eaters (unofficially)", "Snatchers", "Werewolf army"],
@@ -994,7 +1028,7 @@ export default {
       "hair_color": "Bald",
       "eye_color": "Black",
       "wand": "Unknown length, wood and core",
-      "patronus": "Lynx",
+      "patronus": "Lynx",     "imgPatronus":"https://pm1.narvii.com/6207/8a03444a6cd0101c9048e3df733e1802efd2dc83_hq.jpg",
       "house": null,
       "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/kingsley/4663055-1-esl-ES/kingsley.jpg",
       "associated_groups": [
@@ -1020,6 +1054,7 @@ export default {
       "eye_color": "Yellowish",
       "wand": "Unknown length, wood and core",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": null,
       "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/rufus/4663096-1-esl-ES/rufus.jpg",
       "associated_groups": ["British Ministry of Magic", "Auror Office"],
@@ -1037,6 +1072,7 @@ export default {
       "eye_color": null,
       "wand": "Unknown length, wood and core",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Ravenclaw",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/xenophilius/4663111-1-esl-ES/xenophilius.jpg",
       "associated_groups": [
@@ -1061,6 +1097,7 @@ export default {
       "eye_color": null,
       "wand": "Unknown length, wood and core",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Gryffindor",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/billweas/4663091-1-esl-ES/billWeas.jpg",
       "associated_groups": [
@@ -1087,6 +1124,7 @@ export default {
       "eye_color": "Blue",
       "wand": "Unknown wood, core material and length",
       "patronus": null,
+      "imgPatronus":"https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": null,
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/gellert_grindelwald_/4663101-1-esl-ES/Gellert_Grindelwald_.jpg",
       "associated_groups": ["The Alliance", "Acolytes", "Durmstrang Institute"],
@@ -1104,6 +1142,7 @@ export default {
       "eye_color": "Silvery",
       "wand": "Wandmaker",
       "patronus": "Non-corporeal",
+      "imgPatronus":"https://pa1.narvii.com/6590/5f1253dceb60b7e27090cc94613a46632c672acb_hq.gif",
       "house": "Ravenclaw",
       "image":"https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/ollivander_/4663106-1-esl-ES/Ollivander_.jpg",
       "associated_groups": [
@@ -1127,6 +1166,7 @@ export default {
       "eye_color": "Green",
       "wand": null,
       "patronus": null,
+      "imgPatronus": "https://static.wikia.nocookie.net/esharrypotter/images/5/5a/PM_Dementor.jpg",
       "house": null,
       "image": "https://frasesdelavida.com/wp-content/uploads/2018/01/frases-de-dobby.jpg",
       "associated_groups": [
