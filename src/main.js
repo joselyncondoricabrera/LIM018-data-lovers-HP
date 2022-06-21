@@ -69,6 +69,30 @@ let btnOrdenar = document.getElementById("btnOrdenar");
 btnOrdenar.addEventListener ("click", () =>{
   //LLAMNDO AL COMBOBOX  DE ORDENAR PERSONAJES VISIBLE
 document.getElementById("orden").style.display = "block";
+//reiniciar el select de los demas
+filtrarCasa.selectedIndex=0;
+filtrarEspecie.selectedIndex=0;
+filtrarGenero.selectedIndex=0;
+filtrarAsc.selectedIndex=0;
+// reiniciar el select de ascendente o descendente
+orden.selectedIndex=0;
+
+//despintar los label de filtros
+
+labelCasa.classList.remove('pintarFiltros');
+labelEspecie.classList.remove('pintarFiltros');
+labelGenero.classList.remove('pintarFiltros');
+labelAscende.classList.remove('pintarFiltros');
+
+//cargar datos de los 48
+document.getElementById("personajes").style.display = "flex";  
+document.getElementById("personajesContainer").style.display = "flex"; 
+
+
+
+
+
+
 });
 
 let pos=[];
@@ -220,7 +244,7 @@ labelCasa.classList.add('pintarFiltros');
 labelEspecie.classList.remove('pintarFiltros');
 labelGenero.classList.remove('pintarFiltros');
 labelAscende.classList.remove('pintarFiltros');
- 
+
 ocultarParaFiltrar();
 let casaVal=filtrarCasa.value;
 let filCasa=filterCasa(data.characters, casaVal);
@@ -229,6 +253,13 @@ let filCasa=filterCasa(data.characters, casaVal);
 //console.log(typeof(casaVal));
 
 crearDivs(filCasa,personajesFiltrados);
+
+//reiniciar el select de los demas
+filtrarEspecie.selectedIndex=0;
+filtrarGenero.selectedIndex=0;
+filtrarAsc.selectedIndex=0;
+
+orden.style.display='none';
 
 });
 
@@ -245,6 +276,14 @@ ocultarParaFiltrar();
 let especieVal=filtrarEspecie.value;
 let filEspecie=filterEspecie(data.characters, especieVal);
 crearDivs(filEspecie,personajesFiltrados);
+
+//reiniciar el select de los demas
+filtrarCasa.selectedIndex=0;
+filtrarGenero.selectedIndex=0;
+filtrarAsc.selectedIndex=0;
+
+orden.style.display='none';
+
 //console.log(filEspecie);
 //console.log(especieVal);
 });
@@ -264,6 +303,13 @@ let generoVal=filtrarGenero.value;
 let filGenero=filterGenero(data.characters, generoVal);
 crearDivs(filGenero,personajesFiltrados);
 
+//reiniciar el select de los demas
+filtrarEspecie.selectedIndex=0;
+filtrarCasa.selectedIndex=0;
+filtrarAsc.selectedIndex=0;
+
+orden.style.display='none';
+
 //console.log(filGenero);
 //console.log(generoVal);
 
@@ -282,6 +328,12 @@ labelGenero.classList.remove('pintarFiltros');
   let ascVal=filtrarAsc.value;
 let filAsc=filterAscendencia(data.characters, ascVal);
 crearDivs(filAsc,personajesFiltrados);
+//reiniciar el select de los demas
+filtrarEspecie.selectedIndex=0;
+filtrarGenero.selectedIndex=0;
+filtrarCasa.selectedIndex=0;
+
+orden.style.display='none';
 
 //console.log(ascVal);
 //console.log(filAsc);
@@ -289,12 +341,12 @@ crearDivs(filAsc,personajesFiltrados);
 });
 
 function ocultarParaFiltrar(){
-      document.getElementById("personajesOrdenados").style.display = "none"; 
+  document.getElementById("personajesOrdenados").style.display = "none"; 
   document.getElementById("persContainerOrdenado").style.display = "none";
   document.getElementById("personajes").style.display = "none"; 
   document.getElementById("personajesContainer").style.display = "none";
   while (personajesFiltrados.firstChild) {
-personajesFiltrados.removeChild(personajesFiltrados.firstChild);
+    personajesFiltrados.removeChild(personajesFiltrados.firstChild);
   }
 }
 
