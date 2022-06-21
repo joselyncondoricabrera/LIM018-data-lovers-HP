@@ -36,26 +36,18 @@
      </section>
 
       <section id="mostrarPersonajes">
-        <div class="tituloP">
-          <h2>Personajes</h2>
-          <div class="todoOrdenar">
-         <button class="btnOrdenar" id="btnOrdenar">
-            <img class="imgOrdenar" src="ordenar.png">
-          </button>
-          <select name="orden" id="orden" class="orden">
-            <option>Seleccione uno:</option>
-            <option value="ordenarA" id="ordenarA" class="ord">A-Z</option>
-            <option value="ordenarD" id="ordenarD" class="ord">Z-A</option>
-          </select>
-            </div>
-        </div>
-        
-        <div class="menuFiltros">
+         
+        <h2>Personajes</h2>
+       
+        <div id="filtrosBuscaBtnO">
+          <div id="menuSelect">
+         <div class="menuFiltros">
             <label class="filtros" id="filtrosCasa">Casas</label>
             <label class="filtros" id="filtrosEspecie">Especies</label> 
             <label class="filtros" id="filtrosGenero">Género</label>
             <label class="filtros" id="filtrosAscendencia">Ascendencia</label>
-          </div>
+         </div >
+
         <div class="filtrosSelect">
           <select name="casa" id="casa" class="casa">
             <option>Seleccione una casa:</option>
@@ -94,6 +86,22 @@ ascendencia:</option>
             <option value="Squib">Squib</option>
           </select>
             </div>
+          </div>
+
+            <input type="text" id="buscar" placeholder="Buscar"></input>
+
+            <div class="todoOrdenar">
+              <button class="btnOrdenar" id="btnOrdenar">
+                 <img class="imgOrdenar" src="ordenar.png">
+               </button>
+               <select name="orden" id="orden" class="orden">
+                 <option>Seleccione uno:</option>
+                 <option value="ordenarA" id="ordenarA" class="ord">A-Z</option>
+                 <option value="ordenarD" id="ordenarD" class="ord">Z-A</option>
+               </select>
+            </div>
+          </div>
+
           <div class="personajesContainer" id="personajesContainer"> 
           <div id="personajes"></div>
           </div> 
