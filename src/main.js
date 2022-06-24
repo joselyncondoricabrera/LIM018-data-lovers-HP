@@ -4,7 +4,8 @@ import { sortData,
   filterCasa,
   filterEspecie,
   filterGenero,
-  filterAscendencia, } from './data.js';
+  filterAscendencia,
+  computeStats, } from './data.js';
 
 
 //mostrar inicio
@@ -87,20 +88,19 @@ labelAscende.classList.remove('pintarFiltros');
 //cargar datos de los 48
 document.getElementById("personajes").style.display = "flex";  
 document.getElementById("personajesContainer").style.display = "flex"; 
-
-
-
-
-
-
+while (personajesOrdenados.firstChild) {
+  personajesOrdenados.removeChild(personajesOrdenados.firstChild);
+}
+while (personajesFiltrados.firstChild) {
+  personajesFiltrados.removeChild(personajesFiltrados.firstChild);
+}
+document.getElementById('conteo').innerHTML = "";
 });
 
 let pos=[];
 
 //llamando al comboboX orden (ascendente,descendente)
 let orden = document.getElementById("orden");
-
-
 
 //EJECUTA EL COMBOBOX DE ACUERDO A LA SELECCION
 orden.addEventListener ("change", (e) =>{
@@ -115,10 +115,8 @@ orden.addEventListener ("change", (e) =>{
   
     pos=sortData(data.characters,res);
     crearDivs(pos,personajesOrdenados);
+   });
  
-  });
- 
-
 function crearDivs(array,padre){
   let iter=0;
   for(let i=0; i<array.length; i++){
@@ -138,7 +136,6 @@ function crearDivs(array,padre){
     let colorOjos = data.characters[iter].eye_color;
     let varita = data.characters[iter].wand;
     let libros = data.characters[iter].books_featured_in;
-
     let patronus = data.characters[iter].patronus;
     let imgPatronus = data.characters[iter].imgPatronus;
     let image = data.characters[iter].image;
@@ -197,7 +194,6 @@ function crearDivs(array,padre){
     datosDiv.innerHTML+= 'Nombre: ' + nombre + '<br>'+'<br>Fecha de Nac.: '+ fechaNacimiento+'<br>' +'<br>Especie: '+ especie +'<br>'+ '<br>Ancestros: '+ ancestros +'<br>'+ '<br>Género: ' + genero +'<br>'+ '<br>Casa: ' + casa +'<br>'+ '<br>Color de Cabello: ' + colorCabello +'<br>'+'<br>Color de ojos: ' + colorOjos +'<br>'+ '<br>Varita: '+ varita +'<br>'+ '<br>Libros en los que aparece: '+ libros + '<br>';
       
 crearCerrar(datosDiv);
-  
 });
   
     btnPatronus.addEventListener("click", () =>{
@@ -223,7 +219,6 @@ crearCerrar(datosDiv);
     let contenedorImagenPatronus = document.createElement("img"); divImgPatronus.appendChild(contenedorImagenPatronus);
     contenedorImagenPatronus.classList.add('contenedorImagenPatronus');
     contenedorImagenPatronus.src = imgPatronus;
-          
   crearCerrar(divNomPatCerrar, patronusDiv);   
     });     
   } 
@@ -248,10 +243,6 @@ labelAscende.classList.remove('pintarFiltros');
 ocultarParaFiltrar();
 let casaVal=filtrarCasa.value;
 let filCasa=filterCasa(data.characters, casaVal);
-
-//console.log(filCasa);
-//console.log(typeof(casaVal));
-
 crearDivs(filCasa,personajesFiltrados);
 
 //reiniciar el select de los demas
@@ -261,6 +252,9 @@ filtrarAsc.selectedIndex=0;
 
 orden.style.display='none';
 
+let cont = computeStats(filCasa)
+document.getElementById('conteo').innerHTML = "El "+ cont + 
+" % de los personajes pertencen a la casa de " + casaVal;
 });
 
 let filtrarEspecie=document.getElementById("especie");
@@ -282,10 +276,19 @@ filtrarCasa.selectedIndex=0;
 filtrarGenero.selectedIndex=0;
 filtrarAsc.selectedIndex=0;
 
-orden.style.display='none';
+let resultado = especieVal == "Human" ? "Humana" :
+                especieVal == "Werewolf (formerly Human)" ? "Hombre Lobo":
+                especieVal == "Human (Seer)" ? "Humana (Vidente)":
+                especieVal == "House-elf"? "Elfo doméstico":
+                especieVal == "Half-Human/Half-Giant"? "Mitad Humano mitad gigante":
+                especieVal == "Quarter-Veela"? "1/4 Sirena":
+                especieVal == "Human (Metamorphmagus)"? "Humano (Metamorphmagus)":
+                "Humano/Hombre Lobo";
 
-//console.log(filEspecie);
-//console.log(especieVal);
+orden.style.display='none';
+let cont = computeStats(filEspecie)
+document.getElementById('conteo').innerHTML = "El "+ cont + 
+" % de los personajes son de la especie " + resultado;
 });
 
 let filtrarGenero=document.getElementById("genero");
@@ -296,7 +299,6 @@ labelGenero.classList.add('pintarFiltros');
 labelCasa.classList.remove('pintarFiltros');
 labelEspecie.classList.remove('pintarFiltros');
 labelAscende.classList.remove('pintarFiltros');
-
 
 ocultarParaFiltrar();
 let generoVal=filtrarGenero.value;
@@ -310,9 +312,9 @@ filtrarAsc.selectedIndex=0;
 
 orden.style.display='none';
 
-//console.log(filGenero);
-//console.log(generoVal);
-
+let cont = computeStats(filGenero)
+document.getElementById('conteo').innerHTML = "El "+ cont + 
+" % de los personajes son de género " + ((generoVal=="Female") ? "Femenino" : "Masculino");
 });
 
 let filtrarAsc=document.getElementById("asc");
@@ -334,10 +336,19 @@ filtrarGenero.selectedIndex=0;
 filtrarCasa.selectedIndex=0;
 
 orden.style.display='none';
+let resultado = ascVal == "Half-blood" ? "Mestizos" :
+                ascVal == "Pure-blood" ? "Sangre Pura":
+                ascVal == "Muggle-born" ? "Nacidos de muggles":
+                ascVal == "Part-Human (Half-giant)"? "Parte humana (medio gigante)":
+                ascVal == "Muggle"? "Muggle":
+                ascVal == "Pure-blood or half-blood"? "Mestizos o de Sangre Pura":
+                ascVal == "Pure-blood (possibly)"? "Sangre Pura (posiblemente)":
+                ascVal == "Quarter-Veela"? "1/4 Sirena":
+                "Squib";
 
-//console.log(ascVal);
-//console.log(filAsc);
-
+let cont = computeStats(filAsc)
+document.getElementById('conteo').innerHTML = "El "+ cont + 
+" % de los personajes son " + resultado;
 });
 
 function ocultarParaFiltrar(){
@@ -507,6 +518,37 @@ ordenP.addEventListener ("change", (e) =>{
     crearDivsPo(pos,pociones);
   });
 
-
-
+// Obtener una referencia al elemento canvas del DOM
+const grafica = document.querySelector("#grafica").getContext("2d");
+// Las etiquetas son las que van en el eje X. 
+const etiquetas = ["Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin"]
+// Podemos tener varios conjuntos de datos. Comencemos con uno
+const datosCasas = {
+    label: "Personajes por casas",
+    data: [30, 10, 5, 3], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo
+    borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
+    borderWidth: 1,// Ancho del borde
+};
+new Chart(grafica, {
+    type: 'bar',// Tipo de gráfica
+    data: {
+        labels: etiquetas,
+        datasets: [
+          datosCasas,
+            // Aquí más datos...
+        ]
+    },
+    options: {
+      responsive: true,
+     /*  maintainAspectRatio: false, */
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }],
+        },
+    }
+});
 

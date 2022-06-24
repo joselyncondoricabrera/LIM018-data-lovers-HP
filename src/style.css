@@ -215,7 +215,7 @@ border: none;
 }
 
 .menuFiltros{
-    /*background-color: #4D4C7D;*/
+    background-color: #4D4C7D;
     display: flex;
     width: 690px;
     height: 40px;
@@ -237,19 +237,19 @@ border: none;
   }
 
 #filtrosCasa{
-  background-color: #4D4C7D;
+  /* background-color: #4D4C7D; */
   width: 151px;
 }
 #filtrosEspecie{
-  background-color: #4D4C7D;
+  /* background-color: #4D4C7D; */
   width: 195px;
 }
 #filtrosGenero{
-  background-color: #4D4C7D;
+  /* background-color: #4D4C7D; */
   width: 139px;
 }
 #filtrosAscendencia{
-  background-color: #4D4C7D;
+  /* background-color: #4D4C7D; */
   width: 205px;
 }
 
@@ -540,5 +540,32 @@ justify-content: center;
   font-size: 15px;
   font-family: 'Lato';
   color:#363062
-  
 }
+
+#conteo{
+  display: flex;
+  color: #FFFDFE;
+  font-family: 'Benne';
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.grafico{
+  /* position:fixed; */
+  background-color: #363062;
+  color: #D8B9C3;
+ /*  display: flex; */
+  width:400 px;
+  height:300 px;
+/*   padding: 20px;
+  font-size: 15px;
+  border-radius: 0.3rem;
+  justify-content: space-between; */
+  }
+
+  canvas {
+/*     height: 100px;
+    width: 200px; */
+    border : 1px solid red;
+  }

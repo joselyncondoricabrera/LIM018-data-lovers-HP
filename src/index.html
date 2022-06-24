@@ -5,6 +5,7 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
   </head>
    <body>
     <header>
@@ -38,6 +39,8 @@
       <section id="mostrarPersonajes">
          
         <h2>Personajes</h2>
+
+        <label id="conteo"></label>
        
         <div id="filtrosBuscaBtnO">
           <div id="menuSelect">
@@ -88,7 +91,7 @@ ascendencia:</option>
             </div>
           </div>
 
-            <input type="text" id="buscar" placeholder="Buscar"></input>
+           <!--  <input type="text" id="buscar" placeholder="Buscar"></input> -->
 
             <div class="todoOrdenar">
               <button class="btnOrdenar" id="btnOrdenar">
@@ -113,8 +116,12 @@ ascendencia:</option>
           <div class="persContainerFiltrados" id="persContainerFiltrados"> 
           <div id="personajesFiltrados"></div>
           </div> 
+
+          <div class="grafico">
+          <canvas id="grafica"></canvas>
+          </div>
         
-        </section>
+      </section>
      
         <section id="mostrarHechizos">
            <div class="tituloP">

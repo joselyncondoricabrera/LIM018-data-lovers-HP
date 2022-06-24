@@ -31,9 +31,7 @@ export const sortData = (data, sortOrder) => {
 
   //devuelve [] los id respecto de la data de manera ordenada
   return posiciones;
-  
 };
-
 
   //filterData(data.characters, "Slytherin")
 
@@ -70,4 +68,14 @@ function extraerArray(data, filtro){
         posiciones.push(index);
       } 
   return posiciones;
+}
+
+export const computeStats = (data) => {
+  let contador = 0;
+  let prom =0;
+  for (let i=0; i<data.length; i++){
+    contador += 1
+  }
+  prom = ((contador/48)*100).toFixed(2);
+  return prom;
 }
