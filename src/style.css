@@ -3,24 +3,25 @@ body{
   padding: 0;
   margin: 0;
   background: url("https://www.wallpapertip.com/wmimgs/5-58831_harry-potter-wallpaper-pc.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
-  cursor: url(varita-magica4.png), pointer;
+  cursor: url(varita-magica5.png), pointer;
 }
 
 nav{
+
   background: #363062;
   height: 80px;
   width: 100%;
 }
 
-.enlace{
+/* .enlace{
   position: absolute;
   padding: 20px 50px;
 }
-
+ */
 nav ul{
   float: right;
   margin: 0 7px;
@@ -67,80 +68,35 @@ main{
   height: calc(100vh - 80px - 80px);
 }
 
-@media (max-width: 952px){
-  .enlace{
-      padding-left: 20px;
-  }
-  nav ul li a{
-      font-size: 16px;
-  }
-}
-
-@media (max-width: 858px){
-  .checkbtn{
-      display: block;
-  }
-  ul{
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      background: #2c3e50;
-      top: 80px;
-      left: -100%;
-      text-align: center;
-      transition: all .5s;
-  }
-  nav ul li{
-      display: block;
-      margin: 50px 0;
-      line-height: 30px;
-  }
-  nav ul li a{
-      font-size: 20px;
-  }
-  li a:hover, li a.active{
-      background: none;
-      color: red;
-  }
-  #check:checked ~ ul{
-      left:0;
-  }
-}
 
 h1{
-  position: absolute;
-  width: 689px;
-  height: 97px;
-  left: 350px;
-  top: 60px;
-
+  margin: 0px auto;
+  padding: 20px 0px ;
+  width: 100%;
+  display:flex;
+  justify-content:center;
   font-family: 'Vidaloka';
   font-style: normal;
   font-weight: 400;
   font-size: 80px;
   line-height: 97px;
-
   color: #FFFDFE;
-
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 p{
-  position: absolute;
-  width: 650px;
-  height: 362px;
-  left: 600px;
-  top: 140px;
-  
   font-family: 'Benne';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
-  
-  color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    padding-right: 30px;
+    font-size: 20px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    float: right;
+    width: 40%;
+    color: #FFFFFF;
 }
 
 footer{
@@ -160,18 +116,18 @@ footer{
   color: #D8B9C3;
 }
 
-
 h2{
   display: flex;
-  flex-grow: 10;
   color: #FFFDFE;
   font-family: 'Vidaloka';
   font-size: 60px;
-  text-align: center;
-  /*margin: 20px;*/
-  padding-left: 500px;
-  margin: 20px;
+  justify-content: center;
+ /*  margin: 20px auto; */
+  width: 100%;
 }
+
+
+
 
 #filtrosBuscaBtnO{
   display: flex;
@@ -197,45 +153,95 @@ justify-content:center;
 background-color: transparent;
 border: none;
 
-
-
 }
+
+
+
 .imgOrdenar{
   width: 50px;
   height:50px;
  
 }
-.orden{
+
+#orden{
+display: none;
+background-color:#D8B9C3;
+color: #363062;
+}
+
+#ordenH{
+display: none;
+background-color:#D8B9C3;
+color: #363062; 
+}
+
+#ordenP{
+  display: none;
+  background-color:#D8B9C3;
+  color: #363062; 
+  }
+
+
+/* .orden{
   display:none;
   background-color: #D8B9C3;
   color: #0F044C;
   border-style: none;
   font-family: 'Inter';
   font-weight: bold;
+} */
+
+.todosFiltros{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  z-index: 10;
+}
+
+.menuSelect{
+  
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  float: left;
+  align-items: center;
 }
 
 .menuFiltros{
+
     background-color: #4D4C7D;
 
     display: flex;
-    width: 690px;
-    height: 40px;
+    width: auto;
+    height: auto;
+    flex-direction: column;
     justify-content: space-around;
-    
+    background-color: #363062;    
     align-items: center;
-   
+}
+
+.pintarFiltros{
+  background: #4D4C7D; ;
+}
+
+.iconos{
+  height: 30px;
+  width: 45px;
+  fill: #D8B9C3;;
+  padding-top: 15px;
 }
 
 .filtros{
-  color: white;
- 
-  
   /*margin-top: 20px;*/
-  
   line-height: 40px;    
   text-align: center;
   height: 40px;
+  width: 80px;
+  height: auto;
   }
+
 
 #filtrosCasa{
   /*background-color: #4D4C7D;*/
@@ -254,26 +260,85 @@ border: none;
   width: 205px;
 }
 
-.filtros:hover{
-  color:#4D4C7D;
-  background-color:#D8B9C3; 
- /* box-sizing: border-box;*/
+  .filtros:hover{
+    background-color:#4D4C7D; 
+   /* box-sizing: border-box;*/
+  }
+/* #filtrosCasa{
+  width: 80px;
+  height: auto;
+} */
+#casa{
+  /* visibility: hidden; */
+  display:none;
 }
+/* #filtrosEspecie{
+  width: 80px;
+  height: auto;
+} */
+
+#especie{
+  /* visibility: hidden; */
+  display:none;
+}
+/* #filtrosGenero{
+  width: 80px;
+  height: auto;
+} */
+
+#genero{
+  /* visibility: hidden; */
+  display:none;
+}
+
+/* #filtrosAscendencia{
+ width: 80px;
+ height: auto;
+} */
+#asc{
+  /* visibility: hidden; */
+  display:none;
+}
+
 
 .filtrosSelect{
     display: flex;
+    flex-direction: column;
     width:auto;
-    height: 20px;
+    height:auto;
     justify-content: center;
    
 }
 
-#buscar{
-  background-color:#D8B9C3 ;
-  width:250px ;
-  height: 25px;
-  
+.select{
+  height: 60px;
+  width: 205px;
+  color:#363062;
+  background-color:#D8B9C3;
 }
+
+.select:hover{
+  height: 60px;
+  width:205px ;
+  background-color:#D8B9C3;
+  color:#4D4C7D;
+}
+
+#buscar{
+  /* visibility: hidden; */
+  display:none;
+  background-color:#D8B9C3 ;
+  width: 205px;
+  height:59px;
+  font-size: 18px;
+  padding-left: 10px;
+  border: none;
+  color: #363062;
+}
+#buscar::placeholder{
+  color: #363062;
+}
+
 #mostrarPatronusoVarita{
 display: none;
 height: 10rem;
@@ -486,10 +551,6 @@ background: #4D4C7D;
 background:#363062;
 }
 
-.pintarFiltros{
-  background-color: #D8B9C3;
-}
-
 #mostrarPersonajes{
 display: none;
 }
@@ -577,4 +638,77 @@ justify-content: center;
   font-family: 'Lato';
   color:#363062
   
+}
+
+@media (max-width: 950px){
+  .enlace{
+      padding-left: 20px;
+  }
+  nav ul li a{
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 858px){
+  .checkbtn{
+      display: block;
+  }
+  ul{
+      position: fixed;
+      z-index: 100;
+      width: 100%;
+      height: 100vh;
+      background-color: #D8B9C3;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+      /* mix-blend-mode: hard-light; */
+
+  }
+  nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+      mix-blend-mode: normal;
+  }
+  nav ul li a{
+      font-size: 20px;
+      color:#363062;
+      
+      mix-blend-mode: normal;
+  }
+  li:hover{
+      background: none;
+      color:#363062;
+      mix-blend-mode: normal;
+  }
+  #check:checked ~ ul{
+      left:0;
+  }
+  .pintarOpcionNav{
+    background:#827397;
+    color: white;
+    }
+    
+    
+
+  h1{
+    font-size: 50px;
+  }
+
+  p{
+    font-size: 15px;
+    float:none;
+    display: flex;
+    justify-content: center;
+    float: none;
+    margin: 0px auto;
+    width: 60%;
+
+  }
+
+  footer{
+  font-size: 13px;
+  } 
 }

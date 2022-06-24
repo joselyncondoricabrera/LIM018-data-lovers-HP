@@ -76,9 +76,16 @@ cerrar.addEventListener('click',()=>{
 }
 // LLAMANDO AL BOTON PARA ORDENAR PERSONAJES
 let btnOrdenar = document.getElementById("btnOrdenar");
-btnOrdenar.addEventListener ("click", () =>{
+
+btnOrdenar.addEventListener ("mouseenter", () =>{
   //LLAMNDO AL COMBOBOX  DE ORDENAR PERSONAJES VISIBLE
 document.getElementById("orden").style.display = "block";
+menuCasa.style.display="none";
+menuEspecie.style.display="none";
+menuGenero.style.display="none";
+menuAsc.style.display="none";
+menuBuscador.style.display="none"
+
 //reiniciar el select de los demas
 filtrarCasa.selectedIndex=0;
 filtrarEspecie.selectedIndex=0;
@@ -97,13 +104,14 @@ labelAscende.classList.remove('pintarFiltros');
 //cargar datos de los 48
 document.getElementById("personajes").style.display = "flex";  
 document.getElementById("personajesContainer").style.display = "flex"; 
-
-
-
-
-
-
 });
+
+let menuOrden= document.getElementById("orden");
+
+menuOrden.addEventListener ("mouseleave", () =>{
+menuOrden.style.display="none";
+
+})
 
 let pos=[];
 
@@ -241,12 +249,84 @@ function crearDivs(array,padre){
 }
 
 let filtrarCasa=document.getElementById("casa");
+
+//llamando a los select de los label
+let menuCasa= document.getElementById("casa");
+let menuEspecie=document.getElementById("especie");
+let menuGenero= document.getElementById("genero");
+let menuAsc=document.getElementById("asc");
+let menuBuscador=document.getElementById("buscar");
+
 // llamando a todo los label filtros
 let labelCasa = document.getElementById("filtrosCasa");
 let labelEspecie = document.getElementById("filtrosEspecie");
 let labelGenero = document.getElementById("filtrosGenero");
 let labelAscende = document.getElementById("filtrosAscendencia");
+let labelBuscador= document.getElementById("buscador");
 
+// aparecer y desaparecer los filtros
+labelCasa.addEventListener('mouseenter',()=>{
+ menuCasa.style.display="block";
+ menuEspecie.style.display="none";
+ menuGenero.style.display="none";
+ menuAsc.style.display="none";
+ menuBuscador.style.display="none"
+ menuOrden.style.display="none";
+})
+menuCasa.addEventListener('mouseleave',()=>{
+  menuCasa.style.display="none";
+ })
+ 
+ labelEspecie.addEventListener('mouseenter',()=>{
+  menuEspecie.style.display="block";
+  menuCasa.style.display="none";
+  menuGenero.style.display="none";
+  menuAsc.style.display="none";
+  menuBuscador.style.display="none";
+  menuOrden.style.display="none";
+})
+menuEspecie.addEventListener('mouseleave',()=>{
+  menuEspecie.style.display="none";
+  })
+
+  labelGenero.addEventListener('mouseenter',()=>{
+    menuGenero.style.display="block";
+    menuCasa.style.display="none";
+    menuEspecie.style.display="none";
+    menuAsc.style.display="none";
+    menuBuscador.style.display="none"
+    menuOrden.style.display="none";
+   })
+  menuGenero.addEventListener('mouseleave',()=>{
+     menuGenero.style.display="none";
+    })
+
+  labelAscende.addEventListener('mouseenter',()=>{
+    menuAsc.style.display="block";
+    menuCasa.style.display="none";
+    menuEspecie.style.display="none";
+    menuGenero.style.display="none";
+    menuBuscador.style.display="none"
+    menuOrden.style.display="none";
+     })
+  menuAsc.addEventListener('mouseleave',()=>{
+    menuAsc.style.display="none";
+      })
+
+  labelBuscador.addEventListener('mouseenter',()=>{
+    menuBuscador.style.display="block"
+    menuAsc.style.display="none";
+    menuCasa.style.display="none";
+    menuEspecie.style.display="none";
+    menuGenero.style.display="none";
+    menuOrden.style.display="none";
+  })
+  menuBuscador.addEventListener('mouseleave',()=>{
+    menuBuscador.style.display="none";
+  })
+
+
+//llamada filtro casas
 filtrarCasa.addEventListener('change', () => {
  //pintar label cuando selecciona el select
 labelCasa.classList.add('pintarFiltros');
@@ -646,11 +726,17 @@ function crearDivsPo(array,padre){
 }
 }
 
-// llamando al boton para ordenar hechizos
+// llamando al boton para ordenar hechizos y aparecer filtros hechizos
 let btnOrdenarH = document.getElementById("btnOrdenarH");
-btnOrdenarH.addEventListener ("click", () =>{
-document.getElementById("ordenH").style.display = "block";
+btnOrdenarH.addEventListener ("mouseenter", () =>{
+menuOrdenH.style.display="block";
 });
+
+let menuOrdenH= document.getElementById("ordenH");
+menuOrdenH.addEventListener ("mouseleave", () =>{
+menuOrdenH.style.display="none";
+});
+
 
 let ordenH = document.getElementById("ordenH");
 ordenH.addEventListener ("change", (e) =>{
@@ -663,11 +749,19 @@ ordenH.addEventListener ("change", (e) =>{
   });
 
 
-// llamando al botone para ordenar pociones
+
+
+// llamando al botones para ordenar pociones
 let btnOrdenarP = document.getElementById("btnOrdenarP");
-btnOrdenarP.addEventListener ("click", () =>{
-document.getElementById("ordenP").style.display = "block";
+btnOrdenarP.addEventListener ("mouseenter", () =>{
+menuOrdenP.style.display = "block";
 });
+
+let menuOrdenP= document.getElementById("ordenP");
+menuOrdenP.addEventListener ("mouseleave", () =>{
+menuOrdenP.style.display= "none";
+});
+
 
 let ordenP = document.getElementById("ordenP");
 ordenP.addEventListener ("change", (e) =>{
