@@ -215,7 +215,8 @@ border: none;
 }
 
 .menuFiltros{
-    /*background-color: #4D4C7D;*/
+    background-color: #4D4C7D;
+
     display: flex;
     width: 690px;
     height: 40px;
@@ -237,19 +238,19 @@ border: none;
   }
 
 #filtrosCasa{
-  background-color: #4D4C7D;
+  /*background-color: #4D4C7D;*/
   width: 151px;
 }
 #filtrosEspecie{
-  background-color: #4D4C7D;
+  /*background-color: #4D4C7D;*/
   width: 195px;
 }
 #filtrosGenero{
-  background-color: #4D4C7D;
+ /* background-color: #4D4C7D;*/
   width: 139px;
 }
 #filtrosAscendencia{
-  background-color: #4D4C7D;
+  /*background-color: #4D4C7D;*/
   width: 205px;
 }
 
@@ -303,6 +304,13 @@ width:auto;
 height:auto;
 margin: 20px 60px;
 }
+.persContainerBuscado{
+display:flex;
+justify-content: center;
+width:auto;
+height:auto;
+margin: 20px 60px;
+}
 
 #personajes{
 display: flex;
@@ -332,6 +340,17 @@ gap: 20px;
 width:auto;
 height:auto;
 justify-content: center; 
+}
+
+#personajeBuscado{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+width:auto;
+height:auto;
+justify-content: center;
+
 }
 
 .divPersonajes {
@@ -434,7 +453,19 @@ margin: 0 7px;
 height: 2rem;
 width: 2rem;
 float: right; 
-cursor: pointer; 
+cursor: pointer;
+justify-content:center;
+
+background-color: transparent;
+
+border-style: none;
+
+}
+.imagenCerrar{
+  width: 30px;
+  height: 30px;
+  justify-content: center; 
+
 }
 
 img{
@@ -442,6 +473,11 @@ height: 120px;
 width: auto;
 text-align:center;
 }
+.divMensaje{
+  color:#FFFFFF;
+  /* background-color: aqua; */
+}
+
 
 .pintarOpcionNav{
 background: #4D4C7D;

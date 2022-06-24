@@ -18,7 +18,8 @@ inicio.classList.add('pintarOpcionNav');
 inicio.addEventListener ("click", () =>{
 document.getElementById("mostrarInicio").style.display = "block";
 document.getElementById("mostrarPersonajes").style.display = "none"; 
-document.getElementById("mostrarHechizos").style.display = "none";  document.getElementById("mostrarPociones").style.display = "none"; 
+document.getElementById("mostrarHechizos").style.display = "none";  
+document.getElementById("mostrarPociones").style.display = "none"; 
   //pintar el nav inicio
   inicio.classList.add('pintarOpcionNav');
   // despintar los nav personaje,hechizo y pociones
@@ -40,7 +41,8 @@ let personajesFiltrados = document.getElementById("personajesFiltrados");
 function mostrarTodosPer(){
   // mostrando en el label los datos del personaje (imprimir en HTML)
   document.getElementById("mostrarInicio").style.display = "none";
-document.getElementById("mostrarPociones").style.display = "none"; document.getElementById("mostrarHechizos").style.display = "none";
+  document.getElementById("mostrarPociones").style.display = "none"; 
+  document.getElementById("mostrarHechizos").style.display = "none";
   document.getElementById("mostrarPersonajes").style.display = "block";
   //pintar nav personajes
   mostrarPer.classList.add('pintarOpcionNav');
@@ -56,8 +58,16 @@ function crearCerrar(newDiv, newDiv2){
     let cerrar=document.createElement("button");
     cerrar.classList.add('cerrar');
     newDiv.appendChild(cerrar);
+    //
+    cerrar.src = "cerrar.png";
+    
+//
+    let contenedorImagenCerrar = document.createElement("img");
+    cerrar.appendChild(contenedorImagenCerrar);
+    contenedorImagenCerrar.classList.add('imagenCerrar');
+    contenedorImagenCerrar.src = "cerrar.png";
       
-    cerrar.innerText = 'X';
+    //cerrar.innerText = 'X';
     
 cerrar.addEventListener('click',()=>{
   newDiv.style.display ='none';
@@ -196,9 +206,9 @@ function crearDivs(array,padre){
       
     datosDiv.innerHTML+= 'Nombre: ' + nombre + '<br>'+'<br>Fecha de Nac.: '+ fechaNacimiento+'<br>' +'<br>Especie: '+ especie +'<br>'+ '<br>Ancestros: '+ ancestros +'<br>'+ '<br>Género: ' + genero +'<br>'+ '<br>Casa: ' + casa +'<br>'+ '<br>Color de Cabello: ' + colorCabello +'<br>'+'<br>Color de ojos: ' + colorOjos +'<br>'+ '<br>Varita: '+ varita +'<br>'+ '<br>Libros en los que aparece: '+ libros + '<br>';
       
-crearCerrar(datosDiv);
+    crearCerrar(datosDiv);
   
-});
+    });
   
     btnPatronus.addEventListener("click", () =>{
      
@@ -350,6 +360,167 @@ function ocultarParaFiltrar(){
   }
 }
 
+//BUSQUEDA DE PERSONAJE
+//llamando al input del html y container personajeBuscado del html
+  let buscarPersonaje = document.getElementById('buscar');
+  let personaBuscada = document.getElementById('personajeBuscado');
+
+  buscarPersonaje.addEventListener('input',(e)=>{
+
+  //ocultar el personajesContainer, containerOrdenado
+  document.getElementById("personajesContainer").style.display = "none";
+  document.getElementById("persContainerOrdenado").style.display='none';   
+
+  let valorInput = e.target.value;
+  //let nombres =['Joselyn','Diana','Jose','Maria','Joel','Daniel','Manuel','Melisa','Julio','Jose Fausto','Maria Belen','marias','maria jesusa'];
+  let porcionNombre;
+  //let cantPersonaBuscado=0;
+  
+  // array personajes buscados
+  let personajeBuscado=[];
+  // array guarda posciones de como se encuenbtra en la data
+  let PosicionDePers =[];
+
+  //eliminar las tarjetas anteriores
+  while (personaBuscada.firstChild) {
+    personaBuscada.removeChild(personaBuscada.firstChild);
+  }
+
+  //recorrer la data personajes
+  for(let i = 0; i< data.characters.length;i++){
+    //recorriendo los nombre su tamaño
+    for(let j = 0;j< data.characters[i].name.length ;j++){
+      //ALMACENA EN MINUSCULA LA PORCIÓN
+      porcionNombre=data.characters[i].name.substring(0,j+1).toLowerCase();
+      if(valorInput.toLowerCase()==porcionNombre){
+          //cantPersonaBuscado= cantPersonaBuscado+1;
+          //personajeBuscado.push(data.characters[i].name);
+          personajeBuscado.push(i);          
+       }
+    }
+    
+  }
+  //imprime el mensaje cuando no encuentra personajes
+  if(personajeBuscado.length==0){
+    let divMensaje=document.createElement("h3");
+    personaBuscada.appendChild(divMensaje);
+    divMensaje.classList.add('divMensaje');
+    divMensaje.innerHTML+= '<b>'+'No se ha encontrado ningún resultado.'+'</b>'+'<br>'+'Prueba con otros nombres de personaje';
+  }
+    
+  //recorre el nuevo array con personajes encontrados y capturando los datos
+  for(let c = 0;c< personajeBuscado.length;c++){
+    // obtener datos a mostrar
+  let nombre;
+  let fechaNacimiento;
+  let especie;
+  let ancestros;
+  let genero;
+  let casa;
+  let colorCabello;
+  let colorOjos;
+  let varita;
+  let libros;
+  let imagen;
+  let patronus;
+  let imagenPatronus;
+
+    nombre = data.characters[personajeBuscado[c]].name;
+    fechaNacimiento=data.characters[personajeBuscado[c]].birth;
+    especie=data.characters[personajeBuscado[c]].species;
+    ancestros=data.characters[personajeBuscado[c]].ancestry;
+    genero=data.characters[personajeBuscado[c]].gender;
+    casa=data.characters[personajeBuscado[c]].house;
+    colorCabello=data.characters[personajeBuscado[c]].hair_color;
+    colorOjos=data.characters[personajeBuscado[c]].eye_color;
+    varita=data.characters[personajeBuscado[c]].wand;
+    libros=data.characters[personajeBuscado[c]].books_featured_in;
+    imagen = data.characters[personajeBuscado[c]].image;
+    patronus = data.characters[personajeBuscado[c]].patronus;
+    imagenPatronus = data.characters[personajeBuscado[c]].imgPatronus;
+
+    let divPersEncontrado=document.createElement("div");
+    personaBuscada.appendChild(divPersEncontrado);
+    divPersEncontrado.classList.add('divPersonajes');
+     
+    // creando div para mostrar el nombre como titulo de la tarjeta
+    let nombrePersonajes=document.createElement("div");
+    nombrePersonajes.classList.add('nombrePersonajes');
+    divPersEncontrado.appendChild(nombrePersonajes);
+    nombrePersonajes.innerHTML+= nombre + '<br>';
+
+    //creando div que contiene la etiqueta imagen
+    let divImagen = document.createElement("div");
+    divImagen.classList.add('divImagen');
+    divPersEncontrado.appendChild(divImagen);
+    // creando etiqueta imagen de personaje
+    let contenedorImagen = document.createElement("img");
+    divImagen.appendChild(contenedorImagen);
+    contenedorImagen.classList.add('contenedorImagen');
+    contenedorImagen.src = imagen;
+      
+    //creando un div para poner los 2 botones
+      let divBtn=document.createElement("div");
+      divBtn.classList.add('divBtn');
+      divPersEncontrado.appendChild(divBtn);
+    // creando boton datos
+      let btnDatos=document.createElement("button");
+      btnDatos.classList.add('btnDatos');
+      divBtn.appendChild(btnDatos);
+      btnDatos.innerText = 'DATOS';
+     // creando boton patronus   
+      let btnPatronus = document.createElement("button");
+      btnPatronus.classList.add('btnPatronus');
+      divBtn.appendChild(btnPatronus);
+      btnPatronus.innerText = 'PATRONUS';
+
+      //ejecutar el boton datos del personaje
+     btnDatos.addEventListener("click", () =>{  
+        let datosDiv=document.createElement("div");
+        personaBuscada.appendChild(datosDiv);
+        datosDiv.classList.add('datosDiv'); 
+        datosDiv.innerHTML+= 'Nombre: ' + nombre + '<br>'+'<br>Fecha de Nac.: '+ fechaNacimiento+'<br>' +'<br>Especie: '+ especie +'<br>'+ '<br>Ancestros: '+ ancestros +'<br>'+ '<br>Género: ' + genero +'<br>'+ '<br>Casa: ' + casa +'<br>'+ '<br>Color de Cabello: ' + colorCabello +'<br>'+'<br>Color de ojos: ' + colorOjos +'<br>'+ '<br>Varita: '+ varita +'<br>'+ '<br>Libros en los que aparece: '+ libros + '<br>';
+        
+        crearCerrar(datosDiv);
+      });
+
+     btnPatronus.addEventListener("click", () =>{
+     
+      let patronusDiv =document.createElement("div");
+      personaBuscada.appendChild(patronusDiv);
+      patronusDiv.classList.add('patronusDiv');
+  
+        //creando div que contiene nombre patronus y el btn cerrar
+      let divNomPatCerrar=document.createElement("div");
+      patronusDiv.appendChild(divNomPatCerrar);
+      divNomPatCerrar.classList.add('divNomPatCerrar');
+         
+      let nombrePatro=document.createElement("div");
+      divNomPatCerrar.appendChild(nombrePatro);
+        
+      nombrePatro.innerText = 'Patronus: '+ patronus;
+  
+      let divImgPatronus = document.createElement("div");
+      divImgPatronus.classList.add('divImgPatronus');
+      patronusDiv.appendChild(divImgPatronus);
+      
+      let contenedorImagenPatronus = document.createElement("img"); 
+      divImgPatronus.appendChild(contenedorImagenPatronus);
+      contenedorImagenPatronus.classList.add('contenedorImagenPatronus');
+      contenedorImagenPatronus.src = imagenPatronus;
+            
+      crearCerrar(divNomPatCerrar, patronusDiv);   
+      }); 
+     
+  } 
+  console.log(personajeBuscado);
+  
+     
+    
+     
+});
+
+
 // PÁGINA DE HECHIZO
 
 let mostrarHechizo = document.getElementById("mostrarH");
@@ -430,7 +601,8 @@ mostrarPociones.addEventListener ("click",mostrarPo);
 let pociones = document.getElementById("pociones");
 
 function mostrarPo(){
-document.getElementById("mostrarPociones").style.display = "block"; document.getElementById("mostrarHechizos").style.display = "none";
+document.getElementById("mostrarPociones").style.display = "block"; 
+document.getElementById("mostrarHechizos").style.display = "none";
 document.getElementById("mostrarPersonajes").style.display = "none";
 document.getElementById("mostrarInicio").style.display = "none";
 

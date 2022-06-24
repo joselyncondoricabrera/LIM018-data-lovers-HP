@@ -1,5 +1,5 @@
 import {sortData,filterCasa,filterEspecie,filterGenero,filterAscendencia} from '../src/data.js';
-import data from '../src/data/harrypotter/data.js';
+import data from './testData.js';
 
 
 describe('sorData', () => {
@@ -8,7 +8,6 @@ describe('sorData', () => {
   });
 
   it('Deberia retornar [24, 4, 37, 14, 30, 32, 44, 25, 26, 34, 47, 33, 5, 13, 40, 27, 22, 46, 45, 23, 8, 9, 0, 2, 38, 41, 10, 35, 6, 15, 39, 20, 36, 18, 12, 17, 29, 1, 21, 3, 42, 7, 16, 19, 31, 11, 28, 43] para "personajes ordenado ascendente"', () => {
-    
     expect(sortData(data.characters,1)).toStrictEqual([24, 4, 37, 14, 30, 32, 44, 25, 26, 34, 47, 33, 5, 13, 40, 27, 22, 46, 45, 23, 8, 9, 0, 2, 38, 41, 10, 35, 6, 15, 39, 20, 36, 18, 12, 17, 29, 1, 21, 3, 42, 7, 16, 19, 31, 11, 28, 43]);
   });
 });
