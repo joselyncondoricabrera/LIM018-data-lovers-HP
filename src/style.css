@@ -122,7 +122,7 @@ h2{
   font-family: 'Vidaloka';
   font-size: 60px;
   justify-content: center;
- /*  margin: 20px auto; */
+  margin: 20px auto;
   width: 100%;
 }
 
@@ -181,16 +181,6 @@ color: #363062;
   color: #363062; 
   }
 
-
-/* .orden{
-  display:none;
-  background-color: #D8B9C3;
-  color: #0F044C;
-  border-style: none;
-  font-family: 'Inter';
-  font-weight: bold;
-} */
-
 .todosFiltros{
   position: fixed;
   display: flex;
@@ -201,7 +191,6 @@ color: #363062;
 }
 
 .menuSelect{
-  
   display: flex;
   flex-direction: row;
   height: auto;
@@ -210,6 +199,7 @@ color: #363062;
 }
 
 .menuFiltros{
+    background-color: #4D4C7D;
     display: flex;
     width: auto;
     height: auto;
@@ -226,7 +216,7 @@ color: #363062;
 .iconos{
   height: 30px;
   width: 45px;
-  fill: #D8B9C3;;
+  fill: #D8B9C3;
   padding-top: 15px;
 }
 
@@ -239,54 +229,28 @@ color: #363062;
   height: auto;
   }
 
-  .filtros:hover{
-    background-color:#4D4C7D; 
-   /* box-sizing: border-box;*/
-  }
-/* #filtrosCasa{
-  width: 80px;
-  height: auto;
-} */
 #casa{
-  /* visibility: hidden; */
   display:none;
 }
-/* #filtrosEspecie{
-  width: 80px;
-  height: auto;
-} */
 
 #especie{
-  /* visibility: hidden; */
   display:none;
 }
-/* #filtrosGenero{
-  width: 80px;
-  height: auto;
-} */
 
 #genero{
-  /* visibility: hidden; */
   display:none;
 }
 
-/* #filtrosAscendencia{
- width: 80px;
- height: auto;
-} */
 #asc{
-  /* visibility: hidden; */
   display:none;
 }
-
 
 .filtrosSelect{
     display: flex;
     flex-direction: column;
     width:auto;
     height:auto;
-    justify-content: center;
-   
+    justify-content: center;  
 }
 
 .select{
@@ -314,6 +278,7 @@ color: #363062;
   border: none;
   color: #363062;
 }
+
 #buscar::placeholder{
   color: #363062;
 }
@@ -581,78 +546,56 @@ justify-content: center;
   font-size: 15px;
   font-family: 'Lato';
   color:#363062
-  
 }
 
-@media (max-width: 950px){
-  .enlace{
-      padding-left: 20px;
-  }
-  nav ul li a{
-      font-size: 16px;
-  }
-}
-
-@media (max-width: 858px){
-  .checkbtn{
-      display: block;
-  }
-  ul{
-      position: fixed;
-      z-index: 100;
-      width: 100%;
-      height: 100vh;
-      background-color: #D8B9C3;
-      top: 80px;
-      left: -100%;
-      text-align: center;
-      transition: all .5s;
-      /* mix-blend-mode: hard-light; */
-
-  }
-  nav ul li{
-      display: block;
-      margin: 50px 0;
-      line-height: 30px;
-      mix-blend-mode: normal;
-  }
-  nav ul li a{
-      font-size: 20px;
-      color:#363062;
-      
-      mix-blend-mode: normal;
-  }
-  li:hover{
-      background: none;
-      color:#363062;
-      mix-blend-mode: normal;
-  }
-  #check:checked ~ ul{
-      left:0;
-  }
-  .pintarOpcionNav{
-    background:#827397;
-    color: white;
-    }
-    
-    
-
-  h1{
-    font-size: 50px;
-  }
-
-  p{
-    font-size: 15px;
-    float:none;
-    display: flex;
-    justify-content: center;
-    float: none;
+#conteo{
+    display:none;
+    /* display: flex; */
+    color: #FFFDFE;
+    font-family: 'Benne';
+    font-size: 22px;
+    text-align: center;
+    background-color: #363062;
+    width: 650px;
     margin: 0px auto;
-    width: 60%;
+    height: 45px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
 
+.grafico{
+  /* position:fixed; */
+  background-color: #363062;
+  color: #D8B9C3;
+ /*  display: flex; */
+  width:400 px;
+  height:300 px;
+/*   padding: 20px;
+  font-size: 15px;
+  border-radius: 0.3rem;
+  justify-content: space-between; */
   }
 
-  footer{
-  font-size: 13px;
-  } 
-}
+  canvas {
+/*     height: 100px;
+    width: 200px; */
+    border : 1px solid red;
+  }
+
+#personajeBuscado{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width:auto;
+    height:auto;
+    justify-content: center; 
+  }
+
+.divMensaje{
+    color:#FFFFFF;
+    /* background-color: aqua; */
+  }
+  

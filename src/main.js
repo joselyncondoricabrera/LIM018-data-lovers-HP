@@ -4,7 +4,8 @@ import { sortData,
   filterCasa,
   filterEspecie,
   filterGenero,
-  filterAscendencia, } from './data.js';
+  filterAscendencia,
+  computeStats, } from './data.js';
 
 
 //mostrar inicio
@@ -75,6 +76,7 @@ menuEspecie.style.display="none";
 menuGenero.style.display="none";
 menuAsc.style.display="none";
 menuBuscador.style.display="none"
+document.getElementById('conteo').style.display="none";
 
 //reiniciar el select de los demas
 filtrarCasa.selectedIndex=0;
@@ -94,6 +96,13 @@ labelAscende.classList.remove('pintarFiltros');
 //cargar datos de los 48
 document.getElementById("personajes").style.display = "flex";  
 document.getElementById("personajesContainer").style.display = "flex"; 
+while (personajesOrdenados.firstChild) {
+  personajesOrdenados.removeChild(personajesOrdenados.firstChild);
+}
+while (personajesFiltrados.firstChild) {
+  personajesFiltrados.removeChild(personajesFiltrados.firstChild);
+}
+document.getElementById('conteo').innerHTML = "";
 });
 
 let menuOrden= document.getElementById("orden");
@@ -108,8 +117,6 @@ let pos=[];
 //llamando al comboboX orden (ascendente,descendente)
 let orden = document.getElementById("orden");
 
-
-
 //EJECUTA EL COMBOBOX DE ACUERDO A LA SELECCION
 orden.addEventListener ("change", (e) =>{
   let res=e.target.selectedIndex;
@@ -123,10 +130,8 @@ orden.addEventListener ("change", (e) =>{
   
     pos=sortData(data.characters,res);
     crearDivs(pos,personajesOrdenados);
+   });
  
-  });
- 
-
 function crearDivs(array,padre){
   let iter=0;
   for(let i=0; i<array.length; i++){
@@ -146,7 +151,6 @@ function crearDivs(array,padre){
     let colorOjos = data.characters[iter].eye_color;
     let varita = data.characters[iter].wand;
     let libros = data.characters[iter].books_featured_in;
-
     let patronus = data.characters[iter].patronus;
     let imgPatronus = data.characters[iter].imgPatronus;
     let image = data.characters[iter].image;
@@ -205,7 +209,6 @@ function crearDivs(array,padre){
     datosDiv.innerHTML+= 'Nombre: ' + nombre + '<br>'+'<br>Fecha de Nac.: '+ fechaNacimiento+'<br>' +'<br>Especie: '+ especie +'<br>'+ '<br>Ancestros: '+ ancestros +'<br>'+ '<br>Género: ' + genero +'<br>'+ '<br>Casa: ' + casa +'<br>'+ '<br>Color de Cabello: ' + colorCabello +'<br>'+'<br>Color de ojos: ' + colorOjos +'<br>'+ '<br>Varita: '+ varita +'<br>'+ '<br>Libros en los que aparece: '+ libros + '<br>';
       
 crearCerrar(datosDiv);
-  
 });
   
     btnPatronus.addEventListener("click", () =>{
@@ -231,7 +234,6 @@ crearCerrar(datosDiv);
     let contenedorImagenPatronus = document.createElement("img"); divImgPatronus.appendChild(contenedorImagenPatronus);
     contenedorImagenPatronus.classList.add('contenedorImagenPatronus');
     contenedorImagenPatronus.src = imgPatronus;
-          
   crearCerrar(divNomPatCerrar, patronusDiv);   
     });     
   } 
@@ -311,9 +313,11 @@ menuEspecie.addEventListener('mouseleave',()=>{
     menuGenero.style.display="none";
     menuOrden.style.display="none";
   })
+
   menuBuscador.addEventListener('mouseleave',()=>{
     menuBuscador.style.display="none";
-  })
+    document.getElementById('buscar').value= '';
+  });
 
 
 //llamada filtro casas
@@ -325,13 +329,11 @@ labelEspecie.classList.remove('pintarFiltros');
 labelGenero.classList.remove('pintarFiltros');
 labelAscende.classList.remove('pintarFiltros');
 
+document.getElementById("personajeBuscado").style.display = "none";
+
 ocultarParaFiltrar();
 let casaVal=filtrarCasa.value;
 let filCasa=filterCasa(data.characters, casaVal);
-
-//console.log(filCasa);
-//console.log(typeof(casaVal));
-
 crearDivs(filCasa,personajesFiltrados);
 
 //reiniciar el select de los demas
@@ -340,7 +342,10 @@ filtrarGenero.selectedIndex=0;
 filtrarAsc.selectedIndex=0;
 
 orden.style.display='none';
-
+document.getElementById('conteo').style.display="flex";
+let cont = computeStats(filCasa)
+document.getElementById('conteo').innerHTML = "El "+ cont + 
+" % de los personajes pertencen a la casa de " + casaVal;
 });
 
 let filtrarEspecie=document.getElementById("especie");
@@ -352,6 +357,8 @@ labelCasa.classList.remove('pintarFiltros');
 labelGenero.classList.remove('pintarFiltros');
 labelAscende.classList.remove('pintarFiltros');
 
+document.getElementById("personajeBuscado").style.display = "none";  
+
 ocultarParaFiltrar();
 let especieVal=filtrarEspecie.value;
 let filEspecie=filterEspecie(data.characters, especieVal);
@@ -362,10 +369,20 @@ filtrarCasa.selectedIndex=0;
 filtrarGenero.selectedIndex=0;
 filtrarAsc.selectedIndex=0;
 
-orden.style.display='none';
+let resultado = especieVal == "Human" ? "Humana" :
+                especieVal == "Werewolf (formerly Human)" ? "Hombre Lobo":
+                especieVal == "Human (Seer)" ? "Humana (Vidente)":
+                especieVal == "House-elf"? "Elfo doméstico":
+                especieVal == "Half-Human/Half-Giant"? "Mitad Humano mitad gigante":
+                especieVal == "Quarter-Veela"? "1/4 Sirena":
+                especieVal == "Human (Metamorphmagus)"? "Humano (Metamorphmagus)":
+                "Humano/Hombre Lobo";
 
-//console.log(filEspecie);
-//console.log(especieVal);
+orden.style.display='none';
+document.getElementById('conteo').style.display="flex";
+let cont = computeStats(filEspecie)
+document.getElementById('conteo').innerHTML = "El "+ cont + 
+" % de los personajes son de la especie " + resultado;
 });
 
 let filtrarGenero=document.getElementById("genero");
@@ -377,6 +394,7 @@ labelCasa.classList.remove('pintarFiltros');
 labelEspecie.classList.remove('pintarFiltros');
 labelAscende.classList.remove('pintarFiltros');
 
+document.getElementById("personajeBuscado").style.display = "none";  
 
 ocultarParaFiltrar();
 let generoVal=filtrarGenero.value;
@@ -389,10 +407,10 @@ filtrarCasa.selectedIndex=0;
 filtrarAsc.selectedIndex=0;
 
 orden.style.display='none';
-
-//console.log(filGenero);
-//console.log(generoVal);
-
+document.getElementById('conteo').style.display="flex";
+let cont = computeStats(filGenero)
+document.getElementById('conteo').innerHTML = "El "+ cont + 
+" % de los personajes son de género " + ((generoVal=="Female") ? "Femenino" : "Masculino");
 });
 
 let filtrarAsc=document.getElementById("asc");
@@ -404,6 +422,8 @@ labelCasa.classList.remove('pintarFiltros');
 labelEspecie.classList.remove('pintarFiltros');
 labelGenero.classList.remove('pintarFiltros');
 
+document.getElementById("personajeBuscado").style.display = "none";
+
   ocultarParaFiltrar();
   let ascVal=filtrarAsc.value;
 let filAsc=filterAscendencia(data.characters, ascVal);
@@ -414,10 +434,20 @@ filtrarGenero.selectedIndex=0;
 filtrarCasa.selectedIndex=0;
 
 orden.style.display='none';
+let resultado = ascVal == "Half-blood" ? "Mestizos" :
+                ascVal == "Pure-blood" ? "Sangre Pura":
+                ascVal == "Muggle-born" ? "Nacidos de muggles":
+                ascVal == "Part-Human (Half-giant)"? "Parte humana (medio gigante)":
+                ascVal == "Muggle"? "Muggle":
+                ascVal == "Pure-blood or half-blood"? "Mestizos o de Sangre Pura":
+                ascVal == "Pure-blood (possibly)"? "Sangre Pura (posiblemente)":
+                ascVal == "Quarter-Veela"? "1/4 Sirena":
+                "Squib";
 
-//console.log(ascVal);
-//console.log(filAsc);
-
+document.getElementById('conteo').style.display="flex";
+let cont = computeStats(filAsc);
+document.getElementById('conteo').innerHTML = "El "+ cont + 
+" % de los personajes son " + resultado;
 });
 
 function ocultarParaFiltrar(){
@@ -429,6 +459,73 @@ function ocultarParaFiltrar(){
     personajesFiltrados.removeChild(personajesFiltrados.firstChild);
   }
 }
+
+//BUSQUEDA DE PERSONAJE
+//llamando al input del html y container personajeBuscado del html
+let buscarPersonaje = document.getElementById('buscar');
+let personaBuscada = document.getElementById('personajeBuscado');
+
+buscarPersonaje.addEventListener('input',(e)=>{
+//ocultar el personajesContainer, containerOrdenado
+document.getElementById("personajesContainer").style.display = "none";
+document.getElementById("persContainerOrdenado").style.display='none'; 
+document.getElementById("personajeBuscado").style.display = "flex";
+document.getElementById("conteo").style.display='none';
+while (personajesFiltrados.firstChild) {
+  personajesFiltrados.removeChild(personajesFiltrados.firstChild);
+}
+document.getElementById('conteo').innerHTML = '';
+
+let valorInput = e.target.value;
+let porcionNombre;
+
+// array personajes buscados
+let personajeBuscado=[];
+
+//eliminar las tarjetas anteriores
+while (personaBuscada.firstChild) {
+  personaBuscada.removeChild(personaBuscada.firstChild);
+}
+
+//recorrer la data personajes
+for(let i = 0; i< data.characters.length;i++){
+  //recorriendo los nombre su tamaño
+  for(let j = 0;j< data.characters[i].name.length ;j++){
+    //ALMACENA EN MINUSCULA LA PORCIÓN
+    porcionNombre=data.characters[i].name.substring(0,j+1).toLowerCase();
+    if(valorInput.toLowerCase()==porcionNombre){
+        //cantPersonaBuscado= cantPersonaBuscado+1;
+        //personajeBuscado.push(data.characters[i].name);
+        personajeBuscado.push(i);  
+                
+     }
+  }
+  
+}
+
+if(valorInput==''){
+  document.getElementById("mostrarPersonajes").style.display = "block";
+  crearDivs(data.characters,personajes); 
+}
+
+//imprime el mensaje cuando no encuentra personajes
+if(personajeBuscado.length==0){
+  if(valorInput==''){
+    document.getElementById("personajes").style.display = "flex";  
+    document.getElementById("personajesContainer").style.display = "flex";
+    //document.getElementById("mostrarPersonajes").style.display = "block";
+    crearDivs(data.characters,personajes); 
+  }else{
+  let divMensaje=document.createElement("label");
+  personaBuscada.appendChild(divMensaje);
+  divMensaje.classList.add('divMensaje');
+  divMensaje.innerHTML+= '<b>'+'No se ha encontrado ningún resultado.'+'</b>'+'<br>'+'Prueba con otros nombres de personaje';
+}}
+
+crearDivs(personajeBuscado,personaBuscada);
+
+});
+
 
 // PÁGINA DE HECHIZO
 
@@ -603,4 +700,41 @@ ordenP.addEventListener ("change", (e) =>{
 
 
 
+
+
+
+
+// Obtener una referencia al elemento canvas del DOM
+/* const grafica = document.querySelector("#grafica").getContext("2d");
+// Las etiquetas son las que van en el eje X. 
+const etiquetas = ["Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin"]
+// Podemos tener varios conjuntos de datos. Comencemos con uno
+const datosCasas = {
+    label: "Personajes por casas",
+    data: [30, 10, 5, 3], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo
+    borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
+    borderWidth: 1,// Ancho del borde
+};
+new Chart(grafica, {
+    type: 'bar',// Tipo de gráfica
+    data: {
+        labels: etiquetas,
+        datasets: [
+          datosCasas,
+            // Aquí más datos...
+        ]
+    },
+    options: {
+      responsive: true,
+     maintainAspectRatio: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }],
+        },
+    }
+}); */
 
