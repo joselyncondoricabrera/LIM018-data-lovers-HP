@@ -122,7 +122,7 @@ h2{
   font-family: 'Vidaloka';
   font-size: 60px;
   justify-content: center;
- /*  margin: 20px auto; */
+  margin: 20px auto;
   width: 100%;
 }
 
@@ -181,16 +181,6 @@ color: #363062;
   color: #363062; 
   }
 
-
-/* .orden{
-  display:none;
-  background-color: #D8B9C3;
-  color: #0F044C;
-  border-style: none;
-  font-family: 'Inter';
-  font-weight: bold;
-} */
-
 .todosFiltros{
   position: fixed;
   display: flex;
@@ -201,7 +191,6 @@ color: #363062;
 }
 
 .menuSelect{
-  
   display: flex;
   flex-direction: row;
   height: auto;
@@ -227,7 +216,7 @@ color: #363062;
 .iconos{
   height: 30px;
   width: 45px;
-  fill: #D8B9C3;;
+  fill: #D8B9C3;
   padding-top: 15px;
 }
 
@@ -240,40 +229,28 @@ color: #363062;
   height: auto;
   }
 
-#filtrosCasa{
-  /* background-color: #4D4C7D; */
-  width: 151px;
-}
-#filtrosEspecie{
-  /* background-color: #4D4C7D; */
-  width: 195px;
-}
-#filtrosGenero{
-  /* background-color: #4D4C7D; */
-  width: 139px;
-}
-#filtrosAscendencia{
-  /* background-color: #4D4C7D; */
-  width: 205px;
-}
-
-/* #filtrosAscendencia{
- width: 80px;
- height: auto;
-} */
-#asc{
-  /* visibility: hidden; */
+#casa{
   display:none;
 }
 
+#especie{
+  display:none;
+}
+
+#genero{
+  display:none;
+}
+
+#asc{
+  display:none;
+}
 
 .filtrosSelect{
     display: flex;
     flex-direction: column;
     width:auto;
     height:auto;
-    justify-content: center;
-   
+    justify-content: center;  
 }
 
 .select{
@@ -301,6 +278,7 @@ color: #363062;
   border: none;
   color: #363062;
 }
+
 #buscar::placeholder{
   color: #363062;
 }
@@ -571,12 +549,20 @@ justify-content: center;
 }
 
 #conteo{
-  display: flex;
-  color: #FFFDFE;
-  font-family: 'Benne';
-  font-size: 20px;
-  text-align: center;
-  justify-content: center;
+    display:none;
+    /* display: flex; */
+    color: #FFFDFE;
+    font-family: 'Benne';
+    font-size: 22px;
+    text-align: center;
+    background-color: #363062;
+    width: 650px;
+    margin: 0px auto;
+    height: 45px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 8px;
 }
 
 .grafico{
@@ -597,3 +583,19 @@ justify-content: center;
     width: 200px; */
     border : 1px solid red;
   }
+
+#personajeBuscado{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width:auto;
+    height:auto;
+    justify-content: center; 
+  }
+
+.divMensaje{
+    color:#FFFFFF;
+    /* background-color: aqua; */
+  }
+  

@@ -76,6 +76,7 @@ menuEspecie.style.display="none";
 menuGenero.style.display="none";
 menuAsc.style.display="none";
 menuBuscador.style.display="none"
+document.getElementById('conteo').style.display="none";
 
 //reiniciar el select de los demas
 filtrarCasa.selectedIndex=0;
@@ -312,9 +313,11 @@ menuEspecie.addEventListener('mouseleave',()=>{
     menuGenero.style.display="none";
     menuOrden.style.display="none";
   })
+
   menuBuscador.addEventListener('mouseleave',()=>{
     menuBuscador.style.display="none";
-  })
+    document.getElementById('buscar').value= '';
+  });
 
 
 //llamada filtro casas
@@ -325,6 +328,8 @@ labelCasa.classList.add('pintarFiltros');
 labelEspecie.classList.remove('pintarFiltros');
 labelGenero.classList.remove('pintarFiltros');
 labelAscende.classList.remove('pintarFiltros');
+
+document.getElementById("personajeBuscado").style.display = "none";
 
 ocultarParaFiltrar();
 let casaVal=filtrarCasa.value;
@@ -337,7 +342,7 @@ filtrarGenero.selectedIndex=0;
 filtrarAsc.selectedIndex=0;
 
 orden.style.display='none';
-
+document.getElementById('conteo').style.display="flex";
 let cont = computeStats(filCasa)
 document.getElementById('conteo').innerHTML = "El "+ cont + 
 " % de los personajes pertencen a la casa de " + casaVal;
@@ -351,6 +356,8 @@ labelEspecie.classList.add('pintarFiltros');
 labelCasa.classList.remove('pintarFiltros');
 labelGenero.classList.remove('pintarFiltros');
 labelAscende.classList.remove('pintarFiltros');
+
+document.getElementById("personajeBuscado").style.display = "none";  
 
 ocultarParaFiltrar();
 let especieVal=filtrarEspecie.value;
@@ -372,6 +379,7 @@ let resultado = especieVal == "Human" ? "Humana" :
                 "Humano/Hombre Lobo";
 
 orden.style.display='none';
+document.getElementById('conteo').style.display="flex";
 let cont = computeStats(filEspecie)
 document.getElementById('conteo').innerHTML = "El "+ cont + 
 " % de los personajes son de la especie " + resultado;
@@ -386,6 +394,8 @@ labelCasa.classList.remove('pintarFiltros');
 labelEspecie.classList.remove('pintarFiltros');
 labelAscende.classList.remove('pintarFiltros');
 
+document.getElementById("personajeBuscado").style.display = "none";  
+
 ocultarParaFiltrar();
 let generoVal=filtrarGenero.value;
 let filGenero=filterGenero(data.characters, generoVal);
@@ -397,7 +407,7 @@ filtrarCasa.selectedIndex=0;
 filtrarAsc.selectedIndex=0;
 
 orden.style.display='none';
-
+document.getElementById('conteo').style.display="flex";
 let cont = computeStats(filGenero)
 document.getElementById('conteo').innerHTML = "El "+ cont + 
 " % de los personajes son de género " + ((generoVal=="Female") ? "Femenino" : "Masculino");
@@ -411,6 +421,8 @@ labelAscende.classList.add('pintarFiltros');
 labelCasa.classList.remove('pintarFiltros');
 labelEspecie.classList.remove('pintarFiltros');
 labelGenero.classList.remove('pintarFiltros');
+
+document.getElementById("personajeBuscado").style.display = "none";
 
   ocultarParaFiltrar();
   let ascVal=filtrarAsc.value;
@@ -432,7 +444,8 @@ let resultado = ascVal == "Half-blood" ? "Mestizos" :
                 ascVal == "Quarter-Veela"? "1/4 Sirena":
                 "Squib";
 
-let cont = computeStats(filAsc)
+document.getElementById('conteo').style.display="flex";
+let cont = computeStats(filAsc);
 document.getElementById('conteo').innerHTML = "El "+ cont + 
 " % de los personajes son " + resultado;
 });
@@ -446,6 +459,73 @@ function ocultarParaFiltrar(){
     personajesFiltrados.removeChild(personajesFiltrados.firstChild);
   }
 }
+
+//BUSQUEDA DE PERSONAJE
+//llamando al input del html y container personajeBuscado del html
+let buscarPersonaje = document.getElementById('buscar');
+let personaBuscada = document.getElementById('personajeBuscado');
+
+buscarPersonaje.addEventListener('input',(e)=>{
+//ocultar el personajesContainer, containerOrdenado
+document.getElementById("personajesContainer").style.display = "none";
+document.getElementById("persContainerOrdenado").style.display='none'; 
+document.getElementById("personajeBuscado").style.display = "flex";
+document.getElementById("conteo").style.display='none';
+while (personajesFiltrados.firstChild) {
+  personajesFiltrados.removeChild(personajesFiltrados.firstChild);
+}
+document.getElementById('conteo').innerHTML = '';
+
+let valorInput = e.target.value;
+let porcionNombre;
+
+// array personajes buscados
+let personajeBuscado=[];
+
+//eliminar las tarjetas anteriores
+while (personaBuscada.firstChild) {
+  personaBuscada.removeChild(personaBuscada.firstChild);
+}
+
+//recorrer la data personajes
+for(let i = 0; i< data.characters.length;i++){
+  //recorriendo los nombre su tamaño
+  for(let j = 0;j< data.characters[i].name.length ;j++){
+    //ALMACENA EN MINUSCULA LA PORCIÓN
+    porcionNombre=data.characters[i].name.substring(0,j+1).toLowerCase();
+    if(valorInput.toLowerCase()==porcionNombre){
+        //cantPersonaBuscado= cantPersonaBuscado+1;
+        //personajeBuscado.push(data.characters[i].name);
+        personajeBuscado.push(i);  
+                
+     }
+  }
+  
+}
+
+if(valorInput==''){
+  document.getElementById("mostrarPersonajes").style.display = "block";
+  crearDivs(data.characters,personajes); 
+}
+
+//imprime el mensaje cuando no encuentra personajes
+if(personajeBuscado.length==0){
+  if(valorInput==''){
+    document.getElementById("personajes").style.display = "flex";  
+    document.getElementById("personajesContainer").style.display = "flex";
+    //document.getElementById("mostrarPersonajes").style.display = "block";
+    crearDivs(data.characters,personajes); 
+  }else{
+  let divMensaje=document.createElement("label");
+  personaBuscada.appendChild(divMensaje);
+  divMensaje.classList.add('divMensaje');
+  divMensaje.innerHTML+= '<b>'+'No se ha encontrado ningún resultado.'+'</b>'+'<br>'+'Prueba con otros nombres de personaje';
+}}
+
+crearDivs(personajeBuscado,personaBuscada);
+
+});
+
 
 // PÁGINA DE HECHIZO
 
@@ -617,6 +697,12 @@ ordenP.addEventListener ("change", (e) =>{
     pos=sortData(data.potions,res);
     crearDivsPo(pos,pociones);
   });
+
+
+
+
+
+
 
 // Obtener una referencia al elemento canvas del DOM
 /* const grafica = document.querySelector("#grafica").getContext("2d");
