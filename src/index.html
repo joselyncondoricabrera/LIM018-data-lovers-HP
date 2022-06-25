@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+  </head>
+   <body>
+    <header>
+      <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li id="mostrarI"><a class="active" id="inicio" href="#">Inicio</a></li>
+          <li id="mostrarPersonaje"><a href="#">Personajes</a></li>
+          <li id="mostrarH"><a href="#">Hechizos</a></li>
+          <li id="mostrarP"><a href="#">Pociones</a></li>
+        </ul>
+      </nav>
+
+    </header>
+    <section id="mostrarInicio">
+    <main>
+    <h1>Potterica Zone Perú</h1>
+
+    <p>Bienvenidas a Potterrica Zone Perú, un lugar donde podrás encontrar información sobre los personajes, hechizos y pociones del mundo mágico de la Saga de Harry Potter.
+
+      Si estás buscando información sobre los datos de los personajes o la descripción de los hechizos y pociones que quieres usar, estás en el lugar correcto.
+      
+      Disfruta de la información que hemos creado con mucho cariño para ti.</p>
+    </main>
+    <footer>© 2022 Gabriela Córdova - Liseth Lira - Joselyn Condori - Todo los derechos reservados</footer>
+     </section>
+
+      <section id="mostrarPersonajes">
+
+        <div class="todosFiltros">
+          <div class="menuSelect">
+            <div class="menuFiltros">
+               <label class="filtros" id="filtrosCasa">
+                <svg xmlns="http://www.w3.org/2000/svg" class="iconos" viewBox="0 0 576 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5L575.8 255.5z"/>
+                </svg>
+               </label>
+            </div>
+            <select name="casa" id="casa" class="select">
+              <option>Seleccione una casa:</option>
+              <option value="Gryffindor">Gryffindor</option>
+              <option value="Ravenclaw">Ravenclaw</option>
+              <option value="Hufflepuff">Hufflepuff</option>
+              <option value="Slytherin">Slytherin</option>
+            </select>
+          </div>
+
+            <div class="menuSelect">
+              <div class="menuFiltros">
+               <label class="filtros" id="filtrosEspecie">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="iconos" viewBox="0 0 320 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path d="M208 48C208 74.51 186.5 96 160 96C133.5 96 112 74.51 112 48C112 21.49 133.5 0 160 0C186.5 0 208 21.49 208 48zM152 352V480C152 497.7 137.7 512 120 512C102.3 512 88 497.7 88 480V256.9L59.43 304.5C50.33 319.6 30.67 324.5 15.52 315.4C.3696 306.3-4.531 286.7 4.573 271.5L62.85 174.6C80.2 145.7 111.4 128 145.1 128H174.9C208.6 128 239.8 145.7 257.2 174.6L315.4 271.5C324.5 286.7 319.6 306.3 304.5 315.4C289.3 324.5 269.7 319.6 260.6 304.5L232 256.9V480C232 497.7 217.7 512 200 512C182.3 512 168 497.7 168 480V352L152 352z"/>
+                 </svg>
+                </label>
+              </div>
+              <select name="especie" id="especie" class="select">
+                <option>Seleccione especie:</option>
+                <option value="Human">Humana</option>
+                <option value="Werewolf (formerly Human)">Hombre Lobo</option>
+                <option value="Human (Seer)">Humana (Vidente)</option>
+                <option value="House-elf">Elfo doméstico</option>
+                <option value="Half-Human/Half-Giant">Mitad Humano mitad gigante</option>
+                <option value="Quarter-Veela">1/4 Sirena</option>
+                <option value="Human (Metamorphmagus)">Humano (Metamorphmagus)</option>
+                <option value="Human (Werewolf traits)">Humano/Hombre Lobo</option>           
+              </select>
+            </div>    
+
+            <div class="menuSelect">
+              <div class="menuFiltros">   
+                <label class="filtros" id="filtrosGenero">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="iconos" viewBox="0 0 512 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path d="M480 .0002l-112.4 .0001c-21.38 0-32.09 25.85-16.97 40.97l29.56 29.56l-27.11 27.11C326.1 76.85 292.7 64 256 64c-88.37 0-160 71.63-160 160c0 77.4 54.97 141.9 128 156.8v19.22H192c-8.836 0-16 7.162-16 16v31.1c0 8.836 7.164 16 16 16l32 .0001v32c0 8.836 7.164 16 16 16h32c8.838 0 16-7.164 16-16v-32l32-.0001c8.838 0 16-7.164 16-16v-31.1c0-8.838-7.162-16-16-16h-32v-19.22c73.03-14.83 128-79.37 128-156.8c0-28.38-8.018-54.65-20.98-77.77l30.45-30.45l29.56 29.56C470.1 160.5 496 149.8 496 128.4V16C496 7.164 488.8 .0002 480 .0002zM256 304c-44.11 0-80-35.89-80-80c0-44.11 35.89-80 80-80c44.11 0 80 35.89 80 80C336 268.1 300.1 304 256 304z"/>
+                  </svg>
+                </label>
+              </div>
+               <select name="genero" id="genero" class="select">
+                <option>Seleccione género:</option>
+                <option value="Female">Femenino</option>
+                <option value="Male">Masculino</option>
+              </select>
+            </div>
+
+            <div class="menuSelect">
+              <div class="menuFiltros"> 
+               <label class="filtros" id="filtrosAscendencia">
+                <svg xmlns="http://www.w3.org/2000/svg" class="iconos" viewBox="0 0 448 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path d="M413.8 447.1L256 448l0 31.99C256 497.7 241.8 512 224.1 512c-17.67 0-32.1-14.32-32.1-31.99l0-31.99l-158.9-.0099c-28.5 0-43.69-34.49-24.69-56.4l68.98-79.59H62.22c-25.41 0-39.15-29.8-22.67-49.13l60.41-70.85H89.21c-21.28 0-32.87-22.5-19.28-37.31l134.8-146.5c10.4-11.3 28.22-11.3 38.62-.0033l134.9 146.5c13.62 14.81 2.001 37.31-19.28 37.31h-10.77l60.35 70.86c16.46 19.34 2.716 49.12-22.68 49.12h-15.2l68.98 79.59C458.7 413.7 443.1 447.1 413.8 447.1z"/>
+                </svg>
+               </label>
+              </div>
+               <select name= "asc" id="asc" class="select">
+                <option>Seleccione 
+    ascendencia:</option>
+                <option value="Half-blood">Mestiza</option>
+                <option value="Pure-blood">Sangre Pura</option>
+                <option value="Muggle-born">Nacido de muggles</option>
+                <option value="Part-Human (Half-giant)">Parte humana (medio gigante)</option>
+                <option value="Muggle">Muggle</option>
+                <option value="Pure-blood or half-blood">Mestizo o Sangre Pura</option>
+                <option value="Pure-blood (possibly)">Sangre Pura (posiblemente)</option>
+                <option value="Quarter-Veela">1/4 Sirena</option>
+                <option value="Squib">Squib</option>
+              </select>
+            </div>
+              
+            <div class="menuSelect">
+              <div class="menuFiltros">  
+                <label class="filtros" id="btnOrdenar">
+                <!-- <label class="filtros" id="ordenAD"> -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="iconos" viewBox="0 0 512 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path d="M3.853 54.87C10.47 40.9 24.54 32 40 32H472C487.5 32 501.5 40.9 508.1 54.87C514.8 68.84 512.7 85.37 502.1 97.33L320 320.9V448C320 460.1 313.2 471.2 302.3 476.6C291.5 482 278.5 480.9 268.8 473.6L204.8 425.6C196.7 419.6 192 410.1 192 400V320.9L9.042 97.33C-.745 85.37-2.765 68.84 3.854 54.87L3.853 54.87z"/>
+                  </svg>
+                </label>
+              </div> 
+                <select name="orden" id="orden" class="select">
+                  <option>Seleccione uno:</option>
+                  <option value="ordenarA" id="ordenarA" class="ord">A-Z</option>
+                  <option value="ordenarD" id="ordenarD" class="ord">Z-A</option>
+                </select>
+            </div>    
+
+            <div class="menuSelect">
+              <div class="menuFiltros"> 
+               <label class="filtros" id="buscador">
+                <svg xmlns="http://www.w3.org/2000/svg" class="iconos" viewBox="0 0 512 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/>
+                </svg>
+               </label>
+              </div> 
+               <input type="text" id="buscar"  placeholder="Buscar"></input>
+            </div>  
+
+            </div>
+          
+             <h2>Personajes</h2>
+             <label id="conteo"></label>
+          
+          <div class="personajesContainer" id="personajesContainer"> 
+          <div id="personajes"></div>
+          </div> 
+
+          <div class="persContainerOrdenado" id="persContainerOrdenado"> 
+          <div id="personajesOrdenados"></div>
+          </div> 
+
+          <div class="persContainerFiltrados" id="persContainerFiltrados"> 
+          <div id="personajesFiltrados"></div>
+          </div> 
+
+          <div class="persContainerBuscado" id="persContainerBuscado">
+          <div id="personajeBuscado"></div>
+          </div>          
+
+<!--           <div class="grafico">
+          <canvas id="grafica"></canvas>
+          </div> -->
+        
+      </section>
+     
+        <section id="mostrarHechizos">
+           <!-- <div class="tituloP"> -->
+          <h2>Hechizos</h2>
+          <!-- <div class="todoOrdenar"> -->
+         <!-- <button class="btnOrdenar" id="btnOrdenarH">
+            <img class="imgOrdenar" src="ordenar.png">
+          </button> -->
+        <div class="todosFiltros"> 
+          <div class="menuSelect">
+            <div class="menuFiltros">  
+              <label class="filtros" id="btnOrdenarH">
+              <!-- <label class="filtros" id="ordenAD"> -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="iconos" viewBox="0 0 512 512">
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path d="M3.853 54.87C10.47 40.9 24.54 32 40 32H472C487.5 32 501.5 40.9 508.1 54.87C514.8 68.84 512.7 85.37 502.1 97.33L320 320.9V448C320 460.1 313.2 471.2 302.3 476.6C291.5 482 278.5 480.9 268.8 473.6L204.8 425.6C196.7 419.6 192 410.1 192 400V320.9L9.042 97.33C-.745 85.37-2.765 68.84 3.854 54.87L3.853 54.87z"/>
+                </svg>
+              </label>
+            </div> 
+          <select name="orden" id="ordenH" class="select">
+            <option>Seleccione uno:</option>
+            <option value="ordenarA" id="ordenarAH" class="ord">A-Z</option>
+            <option value="ordenarD" id="ordenarDH" class="ord">Z-A</option>
+          </select>
+          </div>
+        </div>
+          <!--   </div>
+        </div> -->
+          
+        <div class="hechizosContainer" id="hechizosContainer"> 
+          <div id="hechizos"></div>
+          </div> 
+          
+        </section>
+
+     <section id="mostrarPociones">
+          <!--  <div class="tituloP"> -->
+          <h2>Pociones</h2>
+          <!-- <div class="todoOrdenar">
+         <button class="btnOrdenar" id="btnOrdenarP">
+            <img class="imgOrdenar" src="ordenar.png">
+          </button> -->
+          <div class="todosFiltros"> 
+            <div class="menuSelect">
+              <div class="menuFiltros">  
+                <label class="filtros" id="btnOrdenarP">
+                <!-- <label class="filtros" id="ordenAD"> -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="iconos" viewBox="0 0 512 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path d="M3.853 54.87C10.47 40.9 24.54 32 40 32H472C487.5 32 501.5 40.9 508.1 54.87C514.8 68.84 512.7 85.37 502.1 97.33L320 320.9V448C320 460.1 313.2 471.2 302.3 476.6C291.5 482 278.5 480.9 268.8 473.6L204.8 425.6C196.7 419.6 192 410.1 192 400V320.9L9.042 97.33C-.745 85.37-2.765 68.84 3.854 54.87L3.853 54.87z"/>
+                  </svg>
+                </label>
+              </div> 
+            <select name="orden" id="ordenP" class="select">
+              <option>Seleccione uno:</option>
+              <option value="ordenarA" id="ordenarAH" class="ord">A-Z</option>
+              <option value="ordenarD" id="ordenarDH" class="ord">Z-A</option>
+            </select>
+            </div>
+          </div>
+            </div>
+
+        </div>
+          <div class="pocionesContainer" id="pocionesContainer"> 
+          <div id="pociones"></div>
+          </div> 
+        </section>
+     
+    <div id="root"></div>
+    <script src="main.js" type="module"></script>
+  </body>
+
+</html>
+
