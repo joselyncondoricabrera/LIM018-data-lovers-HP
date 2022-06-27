@@ -212,9 +212,9 @@ En el proyecto se ha logrado  desarrollar con los siguientes objetivos de aprend
 ## 3. Diseño de la Interfaz de Usuario
 
 ### Prototipo de baja fidelidad
-
-![ ](../main/src/prototipo.png)
 ![ ](../main/src/prototipo2.jpg)
+![ ](../main/src/prototipo.png)
+
 
 ### Prototipo de alta fidelidad
 
