@@ -213,8 +213,8 @@ En el proyecto se ha logrado  desarrollar con los siguientes objetivos de aprend
 
 ### Prototipo de baja fidelidad
 
-![ ](../main2/src/prototipo.png)
-![ ](../main2/src/prototipo2.jpg)
+![ ](../src/prototipo.png)
+![ ](../src/prototipo2.jpg)
 
 ### Prototipo de alta fidelidad
 
