@@ -1,3 +1,4 @@
+
 // funcion que ordena de manera ascendente o descendente la data
 //sortOrder -> index del opcion del combobox
 export const sortData = (data, sortOrder) => {
@@ -79,3 +80,4 @@ export const computeStats = (data) => {
   prom = ((contador/48)*100).toFixed(2);
   return prom;
 }
+
