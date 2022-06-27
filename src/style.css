@@ -11,7 +11,6 @@ body{
 }
 
 nav{
-
   background: #363062;
   height: 80px;
   width: 100%;
@@ -55,6 +54,7 @@ li a:hover{
   cursor: pointer;
   display: none;
 }
+
 #check{
   display: none;
 }
@@ -62,7 +62,6 @@ li a:hover{
 main{
   height: calc(100vh - 80px - 80px);
 }
-
 
 h1{
   margin: 0px auto;
@@ -121,16 +120,11 @@ h2{
   width: 100%;
 }
 
-
-
-
 #filtrosBuscaBtnO{
   display: flex;
   justify-content: space-around;
   align-items: center;
- /* background-color:#4D4C7D;*/
-  height:60px;
-  
+  height:60px;  
 }
 
 .todoOrdenar{
@@ -138,24 +132,19 @@ h2{
   flex-direction: column;
   justify-content:center;
   float:right;
- /* background-color:yellow;*/
   margin: 20px;
 }
-.btnOrdenar{
 
+.btnOrdenar{
 float: right;
 justify-content:center;
 background-color: transparent;
 border: none;
-
 }
-
-
 
 .imgOrdenar{
   width: 50px;
-  height:50px;
- 
+  height:50px; 
 }
 
 #orden{
@@ -215,7 +204,6 @@ color: #363062;
 }
 
 .filtros{
-  /*margin-top: 20px;*/
   line-height: 40px;    
   text-align: center;
   height: 40px;
@@ -279,8 +267,8 @@ height: 10rem;
 width: 15rem;
 background-color: white;
 text-align: center;
-
 }
+
 .personajesContainer{
 display:flex;
 justify-content: center;
@@ -343,7 +331,6 @@ justify-content: space-between;
 border-radius: 0.5rem;
 transition: background-color .5s;
 display: inline;
-/* font-family: 'Volkhov', sans-serif; */
 font-family: 'Vidaloka';
 font-weight: bold;
 opacity:0.9;
@@ -369,7 +356,6 @@ justify-content: space-between;
 margin-top:20px;
 }
 
-
 .btnPatronus{
 background-color: #4D4C7D;
 border-radius: 0.3rem;
@@ -380,8 +366,8 @@ font-weight: bold;
 text-align:center;
 color: white;
 cursor: pointer;
-
 }
+
 .btnDatos{
 background-color: #4D4C7D;
 border-radius: 0.3rem;
@@ -447,6 +433,7 @@ text-align:center;
 .pintarOpcionNav{
 background: #4D4C7D;
 }
+
 .despintarOpcionNav{
 background:#363062;
 }
@@ -528,9 +515,9 @@ flex-wrap: wrap;
 gap: 20px;
 width:auto;
 height:auto;
-justify-content: center; 
-  
+justify-content: center;   
 }
+
 .descriDiv{
   font-size: 15px;
   font-family: 'Lato';
@@ -539,7 +526,6 @@ justify-content: center;
 
 #conteo{
     display:none;
-    /* display: flex; */
     color: #FFFDFE;
     font-family: 'Benne';
     font-size: 22px;
@@ -611,6 +597,7 @@ justify-content: center;
     .checkbtn{
         display: block;
     }
+
     ul{
         position: fixed;
         z-index: 100;
@@ -621,36 +608,35 @@ justify-content: center;
         left: -120%;
         text-align: center;
         transition: all .5s;
-        /* mix-blend-mode: hard-light; */
-  
     }
+
     nav ul li{
         display: block;
         margin: 50px 0;
         line-height: 30px;
         mix-blend-mode: normal;
     }
+
     nav ul li a{
         font-size: 20px;
         color:#363062;
-        
-        mix-blend-mode: normal;
     }
+
     li:hover{
         background: none;
         color:#363062;
         mix-blend-mode: normal;
     }
+
     #check:checked ~ ul{
         left:0;
     }
+
     .pintarOpcionNav{
       background:#827397;
       color: white;
       }
-      
-      
-  
+    
     h1{
       font-size: 50px;
     }
@@ -669,7 +655,6 @@ justify-content: center;
     footer{
     font-size: 13px;
     } 
-
 
 h2{
   font-size: 50px;
@@ -725,7 +710,6 @@ and (min-device-width: 320px)
 and (max-device-width: 736px)
 and (orientation: portrait)
 {
-  
   main{
     height: calc(88vh - 90px - 90px);
   }
@@ -742,11 +726,11 @@ and (orientation: portrait)
 }
 
 nav{
-
   background: #363062;
   height: 180px;
   width: 100%;
 }
+
 ul{
     position: fixed;
     z-index: 100;
@@ -757,18 +741,19 @@ ul{
     left: -120%;
     text-align: center;
     transition: all .5s;
-    /* mix-blend-mode: hard-light; */
-
 }
+
 nav ul li{
     display: block;
     margin: 50px 0;
     line-height: 90px;
 }
+
 nav ul li a{
     font-size: 60px;
     color:#363062;
 }
+
 li:hover{
     background: none;
     color:#363062;
@@ -777,6 +762,7 @@ li:hover{
 #check:checked ~ ul{
     left:0;
 }
+
 .pintarOpcionNav{
   background:#827397;
   color: white;
@@ -789,8 +775,6 @@ li:hover{
   
   p{
     font-family: 'Benne';
-    /* font-style: normal; */
-    /* padding-right: 50px; */
     font-size: 53px;
     line-height: 65px;
     display: flex;
@@ -831,14 +815,12 @@ height: 100px;
 padding-top: 10px;
 }
 
-
 .filtros{
 width: 140px;
 }
 
 .select{
 height: 100px;
-
 }
 
 #buscar{
@@ -902,6 +884,7 @@ overflow: scroll;
   font-size: 50px;
   overflow: scroll;
 }
+
 .cerrar{
 height: 3.5rem;
 width: 3.5rem;
