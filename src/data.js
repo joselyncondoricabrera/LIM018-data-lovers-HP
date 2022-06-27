@@ -5,7 +5,7 @@ export const sortData = (data, sortOrder) => {
   let posiciones=[];
   let ordenado=[];
   //almacena datos de todos los personajes o hechizos o pociones 
-   //(dependiendo en donde lo llame)
+  //(dependiendo en donde lo llame)
   let pers=[];
   for(let i=0; i<data.length; i++){       
     pers[i]=data[i].name;
@@ -34,7 +34,7 @@ export const sortData = (data, sortOrder) => {
   return posiciones;
 };
 
-  //filterData(data.characters, "Slytherin")
+//filterData(data.characters, "Slytherin")
 
 export const filterCasa = (data, condition) => {
   const filtroCasa = data.filter((hp) => hp.house === condition);
