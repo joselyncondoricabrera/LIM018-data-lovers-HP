@@ -215,6 +215,9 @@ En el proyecto se ha logrado  desarrollar con los siguientes objetivos de aprend
 ![ ](../main/src/prototipo.png)
 
 
-### Prototipo de alta fidelidad
+### Prototipo de alta fidelidad 
+[Figma](https://www.figma.com/file/70A6PvMLwXVSo8LS7aUiPm/Potterica-Per%C3%BA?node-id=0%3A1)
 
 
+### Git Pages: 
+https://gabrielac3.github.io/LIM018-data-lovers-HP/src/
