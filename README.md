@@ -5,7 +5,6 @@
 * [1. Resumen del proyecto](#1-resumen-del-proyecto)
 * [2. Objetivos de aprendizaje](#2-objetivos-de-aprendizaje)
 * [3. Diseño de la Interfaz de Usuario](#3-diseño-de-la-interfaz-de-usuario)
-* [4. Checklist](#4-checklist)
 
 ***
 
