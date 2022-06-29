@@ -1,4 +1,3 @@
-
 import data from './data/harrypotter/data.js';
 import { sortData,
   filterCasa,
@@ -6,7 +5,6 @@ import { sortData,
   filterGenero,
   filterAscendencia,
   computeStats, } from './data.js';
-
 
 //mostrar inicio
 let inicio = document.getElementById("mostrarI");
@@ -26,8 +24,6 @@ document.getElementById("mostrarHechizos").style.display = "none";  document.get
    mostrarPer.classList.remove('pintarOpcionNav');
    mostrarHechizo.classList.remove('pintarOpcionNav');
    mostrarPociones.classList.remove('pintarOpcionNav');
-  
-  
 });
 
 //llamando a la section para mostrar los personajes
@@ -41,7 +37,8 @@ let personajesFiltrados = document.getElementById("personajesFiltrados");
 function mostrarTodosPer(){
   // mostrando en el label los datos del personaje (imprimir en HTML)
   document.getElementById("mostrarInicio").style.display = "none";
-document.getElementById("mostrarPociones").style.display = "none"; document.getElementById("mostrarHechizos").style.display = "none";
+  document.getElementById("mostrarPociones").style.display = "none"; 
+  document.getElementById("mostrarHechizos").style.display = "none";
   document.getElementById("mostrarPersonajes").style.display = "block";
   //pintar nav personajes
   mostrarPer.classList.add('pintarOpcionNav');
@@ -50,21 +47,34 @@ document.getElementById("mostrarPociones").style.display = "none"; document.getE
   mostrarHechizo.classList.remove('pintarOpcionNav');
   mostrarPociones.classList.remove('pintarOpcionNav');
 
+  document.getElementById("personajes").style.display = "flex";  
+  document.getElementById("personajesContainer").style.display = "flex"; 
+  while (personajesOrdenados.firstChild) {
+    personajesOrdenados.removeChild(personajesOrdenados.firstChild);
+  }
+  while (personajesFiltrados.firstChild) {
+    personajesFiltrados.removeChild(personajesFiltrados.firstChild);
+  }
+  while (personaBuscada.firstChild) {
+    personaBuscada.removeChild(personaBuscada.firstChild);
+  }
+  document.getElementById('conteo').style.display="none";
+  document.getElementById('conteo').innerHTML = "";
+
   crearDivs(data.characters,personajes); 
 }
 
-function crearCerrar(newDiv, newDiv2){
+function crearCerrar(newDiv){
     let cerrar=document.createElement("button");
     cerrar.classList.add('cerrar');
     newDiv.appendChild(cerrar);
-      
     cerrar.innerText = 'X';
     
 cerrar.addEventListener('click',()=>{
-  newDiv.style.display ='none';
-  newDiv2.style.display ='none'; 
+  newDiv.style.display ='none'; 
 });
 }
+
 // LLAMANDO AL BOTON PARA ORDENAR PERSONAJES
 let btnOrdenar = document.getElementById("btnOrdenar");
 
@@ -77,6 +87,7 @@ menuGenero.style.display="none";
 menuAsc.style.display="none";
 menuBuscador.style.display="none"
 document.getElementById('conteo').style.display="none";
+document.getElementById("personajeBuscado").style.display = "none";
 
 //reiniciar el select de los demas
 filtrarCasa.selectedIndex=0;
@@ -87,7 +98,6 @@ filtrarAsc.selectedIndex=0;
 orden.selectedIndex=0;
 
 //despintar los label de filtros
-
 labelCasa.classList.remove('pintarFiltros');
 labelEspecie.classList.remove('pintarFiltros');
 labelGenero.classList.remove('pintarFiltros');
@@ -109,8 +119,7 @@ let menuOrden= document.getElementById("orden");
 
 menuOrden.addEventListener ("mouseleave", () =>{
 menuOrden.style.display="none";
-
-})
+});
 
 let pos=[];
 
@@ -127,6 +136,7 @@ orden.addEventListener ("change", (e) =>{
     document.getElementById("personajesContainer").style.display = "none"; 
     document.getElementById("personajesOrdenados").style.display = "flex";  
     document.getElementById("persContainerOrdenado").style.display = "flex";
+    document.getElementById("personajeBuscado").style.display = "none";
   
     pos=sortData(data.characters,res);
     crearDivs(pos,personajesOrdenados);
@@ -234,11 +244,19 @@ crearCerrar(datosDiv);
     let contenedorImagenPatronus = document.createElement("img"); divImgPatronus.appendChild(contenedorImagenPatronus);
     contenedorImagenPatronus.classList.add('contenedorImagenPatronus');
     contenedorImagenPatronus.src = imgPatronus;
-  crearCerrar(divNomPatCerrar, patronusDiv);   
+    
+    let cerrar=document.createElement("button");
+    cerrar.classList.add('cerrar');
+    divNomPatCerrar.appendChild(cerrar);
+    cerrar.innerText = 'X';
+    cerrar.addEventListener('click',()=>{
+      patronusDiv.style.display ='none'; 
+    });
     });     
   } 
   opcionPersonaje.classList.add('pintarOpcionNav');
 }
+
 
 let filtrarCasa=document.getElementById("casa");
 
@@ -288,10 +306,10 @@ menuEspecie.addEventListener('mouseleave',()=>{
     menuAsc.style.display="none";
     menuBuscador.style.display="none"
     menuOrden.style.display="none";
-   })
+   });
   menuGenero.addEventListener('mouseleave',()=>{
      menuGenero.style.display="none";
-    })
+    });
 
   labelAscende.addEventListener('mouseenter',()=>{
     menuAsc.style.display="block";
@@ -300,10 +318,10 @@ menuEspecie.addEventListener('mouseleave',()=>{
     menuGenero.style.display="none";
     menuBuscador.style.display="none"
     menuOrden.style.display="none";
-     })
+     });
   menuAsc.addEventListener('mouseleave',()=>{
     menuAsc.style.display="none";
-      })
+      });
 
   labelBuscador.addEventListener('mouseenter',()=>{
     menuBuscador.style.display="block"
@@ -312,13 +330,12 @@ menuEspecie.addEventListener('mouseleave',()=>{
     menuEspecie.style.display="none";
     menuGenero.style.display="none";
     menuOrden.style.display="none";
-  })
+  });
 
   menuBuscador.addEventListener('mouseleave',()=>{
     menuBuscador.style.display="none";
     document.getElementById('buscar').value= '';
   });
-
 
 //llamada filtro casas
 filtrarCasa.addEventListener('change', () => {
@@ -461,7 +478,6 @@ function ocultarParaFiltrar(){
 }
 
 //BUSQUEDA DE PERSONAJE
-//llamando al input del html y container personajeBuscado del html
 let buscarPersonaje = document.getElementById('buscar');
 let personaBuscada = document.getElementById('personajeBuscado');
 
@@ -475,39 +491,18 @@ while (personajesFiltrados.firstChild) {
   personajesFiltrados.removeChild(personajesFiltrados.firstChild);
 }
 document.getElementById('conteo').innerHTML = '';
-
-let valorInput = e.target.value;
-let porcionNombre;
-
-// array personajes buscados
-let personajeBuscado=[];
-
 //eliminar las tarjetas anteriores
 while (personaBuscada.firstChild) {
   personaBuscada.removeChild(personaBuscada.firstChild);
 }
 
-//recorrer la data personajes
-for(let i = 0; i< data.characters.length;i++){
-  //recorriendo los nombre su tamaño
-  for(let j = 0;j< data.characters[i].name.length ;j++){
-    //ALMACENA EN MINUSCULA LA PORCIÓN
-    porcionNombre=data.characters[i].name.substring(0,j+1).toLowerCase();
-    if(valorInput.toLowerCase()==porcionNombre){
-        //cantPersonaBuscado= cantPersonaBuscado+1;
-        //personajeBuscado.push(data.characters[i].name);
-        personajeBuscado.push(i);  
-                
-     }
-  }
-  
-}
+let valorInput = e.target.value;
+let personajeBuscado= buscador(valorInput,data.characters);
 
 if(valorInput==''){
   document.getElementById("mostrarPersonajes").style.display = "block";
   crearDivs(data.characters,personajes); 
 }
-
 //imprime el mensaje cuando no encuentra personajes
 if(personajeBuscado.length==0){
   if(valorInput==''){
@@ -521,25 +516,30 @@ if(personajeBuscado.length==0){
   divMensaje.classList.add('divMensaje');
   divMensaje.innerHTML+= '<b>'+'No se ha encontrado ningún resultado.'+'</b>'+'<br>'+'Prueba con otros nombres de personaje';
 }}
-
 crearDivs(personajeBuscado,personaBuscada);
-
 });
 
 
 // PÁGINA DE HECHIZO
-
 let mostrarHechizo = document.getElementById("mostrarH");
-mostrarHechizo.addEventListener ("click",mostrarHech);
-
 let hechizos = document.getElementById("hechizos");
+mostrarHechizo.addEventListener ("click",mostrarHech);
 
 function mostrarHech(){
   document.getElementById("mostrarHechizos").style.display = "block";
-document.getElementById("mostrarPersonajes").style.display = "none";
-document.getElementById("mostrarInicio").style.display = "none";
-document.getElementById("mostrarPociones").style.display = "none"; 
+  document.getElementById("mostrarPersonajes").style.display = "none";
+  document.getElementById("mostrarInicio").style.display = "none";
+  document.getElementById("mostrarPociones").style.display = "none"; 
 
+  document.getElementById("hechizos").style.display = "flex";  
+  document.getElementById("hechizosContainer").style.display = "flex";
+
+  while (hechizosOrdenados.firstChild) {
+    hechizosOrdenados.removeChild(hechizosOrdenados.firstChild);
+  }
+  while (hechizosBuscados.firstChild) {
+    hechizosBuscados.removeChild(hechizosBuscados.firstChild);
+  }
   crearDivsHech(data.spells,hechizos);
   //pintar nav hechizos
   mostrarHechizo.classList.add('pintarOpcionNav');
@@ -547,7 +547,6 @@ document.getElementById("mostrarPociones").style.display = "none";
   inicio.classList.remove('pintarOpcionNav');
   mostrarPer.classList.remove('pintarOpcionNav');
   mostrarPociones.classList.remove('pintarOpcionNav');
-  
 }
 
 function crearDivsHech(array,padre){
@@ -568,7 +567,17 @@ function crearDivsHech(array,padre){
     let etimologia = data.spells[iter].etymology;
     let nota = data.spells[iter].note;
     
-    padre = document.getElementById("hechizos");
+    if (padre==hechizos){
+      padre = document.getElementById("hechizos");
+      }
+  
+    if (padre==hechizosBuscados){
+      padre = document.getElementById("hechizosBuscados");
+      }
+
+    if (padre==hechizosOrdenados){
+      padre = document.getElementById("hechizosOrdenados");
+      }
     
     let divHechizos = document.createElement("div");
     padre.appendChild(divHechizos);
@@ -593,24 +602,121 @@ function crearDivsHech(array,padre){
     datosDivHechizos.innerHTML+= 'Nombre: ' + nombre + '<br>'+'<br>Otro nombre: '+ otroNombre+'<br>' +'<br>Pronunciación: '+ pronunciacion +'<br>'+ '<br>Tipo: '+ tipo +'<br>'+ '<br>Descripción: ' + descripcion +'<br>'+ '<br>Mención: ' + mencion +'<br>'+ '<br>Etimología: ' + etimologia +'<br>'+'<br>Nota: ' + nota +'<br>';
       
 crearCerrar(datosDivHechizos);
-  
 });
-  
-}
-}
+}}
+
+let hechizosOrdenados= document.getElementById("hechizosOrdenados");
+// llamando al boton para ordenar hechizos y aparecer filtros hechizos
+let btnOrdenarH = document.getElementById("btnOrdenarH");
+
+btnOrdenarH.addEventListener ("mouseenter", () =>{
+  menuOrdenH.style.display="block";
+  menuBuscadorH.style.display="none";
+  document.getElementById("ordenH").style.display = "block";
+  ordenH.selectedIndex=0;
+  document.getElementById("hechizos").style.display = "flex";  
+  document.getElementById("hechizosContainer").style.display = "flex";
+  document.getElementById("hechizosBuscados").style.display = "none";
+  while (hechizosOrdenados.firstChild) {
+    hechizosOrdenados.removeChild(hechizosOrdenados.firstChild);
+  }
+});
+
+let menuOrdenH= document.getElementById("ordenH");
+menuOrdenH.addEventListener ("mouseleave", () =>{
+  menuOrdenH.style.display="none";
+});
+
+let ordenH = document.getElementById("ordenH");
+ordenH.addEventListener ("change", (e) =>{
+  let res=e.target.selectedIndex;
+
+  while (hechizosOrdenados.firstChild) {
+    hechizosOrdenados.removeChild(hechizosOrdenados.firstChild);
+  }
+  document.getElementById("hechizos").style.display = "none";  
+  document.getElementById("hechizosContainer").style.display = "none"; 
+  document.getElementById("hechizosBuscados").style.display = "none";
+    pos=sortData(data.spells,res);
+    crearDivsHech(pos,hechizosOrdenados);
+  });
+
+//BUSQUEDA DE HECHIZOS
+let labelBuscadorH= document.getElementById("buscadorH");
+let menuBuscadorH=document.getElementById("buscarH");
+
+labelBuscadorH.addEventListener('mouseenter',()=>{
+  menuBuscadorH.style.display="block"
+  menuOrdenH.style.display="none";
+  document.getElementById("hechizosContainer").style.display = "flex";
+  document.getElementById("hechizos").style.display = "flex";
+})
+
+menuBuscadorH.addEventListener('mouseleave',()=>{
+  menuBuscadorH.style.display="none";
+  document.getElementById('buscarH').value= '';
+});
+
+//llamando al input del html y container personajeBuscado del html
+let buscarHechizo = document.getElementById('buscarH');
+let hechizosBuscados = document.getElementById('hechizosBuscados');
+
+buscarHechizo.addEventListener('input',(e)=>{
+
+  document.getElementById("hechizosContainer").style.display = "none";
+  document.getElementById("hechizos").style.display = "none";
+  document.getElementById("hechizosBuscados").style.display = "flex";
+
+  while (hechizosBuscados.firstChild) {
+    hechizosBuscados.removeChild(hechizosBuscados.firstChild);
+  }
+  while (hechizosOrdenados.firstChild) {
+    hechizosOrdenados.removeChild(hechizosOrdenados.firstChild);
+  }
+  let valorInput = e.target.value;
+
+  if(valorInput==''){
+    document.getElementById("mostrarHechizos").style.display = "block";
+    crearDivsHech(data.spells,hechizos);
+  }
+  let hechizoBuscado= buscador(valorInput,data.spells);
+
+  //imprime el mensaje cuando no encuentra hechizos
+  if(hechizoBuscado.length==0){
+    if(valorInput==''){
+      document.getElementById("hechizos").style.display = "flex";  
+      document.getElementById("hechizosContainer").style.display = "flex";
+      crearDivsHech(data.spells,hechizos);
+    }else{
+    let divMensaje=document.createElement("label");
+    hechizosBuscados.appendChild(divMensaje);
+    divMensaje.classList.add('divMensaje');
+    divMensaje.innerHTML+= '<b>'+'No se ha encontrado ningún resultado.'+'</b>'+'<br>'+'Prueba con otros nombres de hechizos';
+  }}
+  crearDivsHech(hechizoBuscado,hechizosBuscados);
+});
 
 // PÁGINA DE POCIONES
 
 let mostrarPociones = document.getElementById("mostrarP");
+let pociones = document.getElementById("pociones");
 mostrarPociones.addEventListener ("click",mostrarPo);
 
-let pociones = document.getElementById("pociones");
-
 function mostrarPo(){
-document.getElementById("mostrarPociones").style.display = "block"; document.getElementById("mostrarHechizos").style.display = "none";
-document.getElementById("mostrarPersonajes").style.display = "none";
-document.getElementById("mostrarInicio").style.display = "none";
+  document.getElementById("mostrarPociones").style.display = "block"; 
+  document.getElementById("mostrarHechizos").style.display = "none";
+  document.getElementById("mostrarPersonajes").style.display = "none";
+  document.getElementById("mostrarInicio").style.display = "none";
 
+  document.getElementById("pociones").style.display = "flex";  
+  document.getElementById("pocionesContainer").style.display = "flex";
+
+  while (pocionesOrdenadas.firstChild) {
+    pocionesOrdenadas.removeChild(pocionesOrdenadas.firstChild);
+  }
+  while (pocionesBuscadas.firstChild) {
+    pocionesBuscadas.removeChild(pocionesBuscadas.firstChild);
+  }
   crearDivsPo(data.potions,pociones);
   //Pintar nav posiciones
   mostrarPociones.classList.add('pintarOpcionNav');
@@ -618,7 +724,6 @@ document.getElementById("mostrarInicio").style.display = "none";
   inicio.classList.remove('pintarOpcionNav');
   mostrarPer.classList.remove('pintarOpcionNav');
   mostrarHechizo.classList.remove('pintarOpcionNav');
-  
 }
 
 function crearDivsPo(array,padre){
@@ -647,62 +752,111 @@ function crearDivsPo(array,padre){
     descriDiv.classList.add('descriDiv');
       
     descriDiv.innerHTML+= '<br>Descripción: ' + descripcion +'<br>';
-        
-}
-}
-
-// llamando al boton para ordenar hechizos y aparecer filtros hechizos
-let btnOrdenarH = document.getElementById("btnOrdenarH");
-btnOrdenarH.addEventListener ("mouseenter", () =>{
-menuOrdenH.style.display="block";
-});
-
-let menuOrdenH= document.getElementById("ordenH");
-menuOrdenH.addEventListener ("mouseleave", () =>{
-menuOrdenH.style.display="none";
-});
-
-
-let ordenH = document.getElementById("ordenH");
-ordenH.addEventListener ("change", (e) =>{
-  let res=e.target.selectedIndex;
-  while (hechizos.firstChild) {
-    hechizos.removeChild(hechizos.firstChild);
-  }
-    pos=sortData(data.spells,res);
-    crearDivsHech(pos,hechizos);
-  });
-
-
-
+}}
 
 // llamando al botones para ordenar pociones
 let btnOrdenarP = document.getElementById("btnOrdenarP");
 btnOrdenarP.addEventListener ("mouseenter", () =>{
-menuOrdenP.style.display = "block";
+  menuOrdenP.style.display = "block";
+  menuBuscadorP.style.display="none";
+  document.getElementById("ordenP").style.display = "block";
+  ordenP.selectedIndex=0;
+  document.getElementById("pociones").style.display = "flex";  
+  document.getElementById("pocionesContainer").style.display = "flex";
+  document.getElementById("pocionesBuscadas").style.display = "none";
+  while (pocionesOrdenadas.firstChild) {
+    pocionesOrdenadas.removeChild(pocionesOrdenadas.firstChild);
+  }
 });
 
 let menuOrdenP= document.getElementById("ordenP");
 menuOrdenP.addEventListener ("mouseleave", () =>{
-menuOrdenP.style.display= "none";
+  menuOrdenP.style.display= "none";
 });
 
+let pocionesOrdenadas=document.getElementById("pocionesOrdenadas");
 
 let ordenP = document.getElementById("ordenP");
 ordenP.addEventListener ("change", (e) =>{
   let res=e.target.selectedIndex;
-  while (pociones.firstChild) {
-    pociones.removeChild(pociones.firstChild);
+
+  while (pocionesOrdenadas.firstChild) {
+    pocionesOrdenadas.removeChild(pocionesOrdenadas.firstChild);
   }
-    pos=sortData(data.potions,res);
-    crearDivsPo(pos,pociones);
+  document.getElementById("pociones").style.display = "none";  
+  document.getElementById("pocionesContainer").style.display = "none"; 
+  document.getElementById("pocionesBuscadas").style.display = "none";
+  
+  pos=sortData(data.potions,res);
+  crearDivsPo(pos,pocionesOrdenadas);
   });
 
+//BUSQUEDA DE POCIONES
+let labelBuscadorP= document.getElementById("buscadorP");
+let menuBuscadorP=document.getElementById("buscarP");
 
+labelBuscadorP.addEventListener('mouseenter',()=>{
+  menuBuscadorP.style.display="block"
+  menuOrdenP.style.display="none";
+  document.getElementById("pocionesBuscadas").style.display = "flex";
+});
 
+menuBuscadorP.addEventListener('mouseleave',()=>{
+  menuBuscadorH.style.display="none";
+  document.getElementById('buscarP').value= '';
+});
 
+let pocionesBuscadas = document.getElementById('pocionesBuscadas');
 
+menuBuscadorP.addEventListener('input',(e)=>{
 
+  document.getElementById("pocionesContainer").style.display = "none";
+  document.getElementById("pociones").style.display = "none";
+  while (pocionesBuscadas.firstChild) {
+    pocionesBuscadas.removeChild(pocionesBuscadas.firstChild);
+  }
+  while (pocionesOrdenadas.firstChild) {
+    pocionesOrdenadas.removeChild(pocionesOrdenadas.firstChild);
+  }
+  let valorInput = e.target.value;
+
+  if(valorInput==''){
+    document.getElementById("mostrarPociones").style.display = "block";
+    crearDivsPo(data.potions,pociones);
+  }
+  let pocionBuscada= buscador(valorInput,data.potions);
+
+//imprime el mensaje cuando no encuentra hechizos
+  if(pocionBuscada.length==0){
+    if(valorInput==''){
+      document.getElementById("pociones").style.display = "flex";  
+      document.getElementById("pocionesContainer").style.display = "flex";
+      crearDivsPo(data.potions,pociones);
+    }else{
+    let divMensaje=document.createElement("label");
+    pocionesBuscadas.appendChild(divMensaje);
+    divMensaje.classList.add('divMensaje');
+    divMensaje.innerHTML+= '<b>'+'No se ha encontrado ningún resultado.'+'</b>'+'<br>'+'Prueba con otros nombres de pociones';
+  }}
+  crearDivsPo(pocionBuscada,pocionesBuscadas);
+});
+
+function buscador(valorInput,data){
+let porcion;
+let arrayBuscado=[];
+//recorrer la data personajes
+for(let i = 0; i< data.length;i++){
+  //recorriendo los nombre su tamaño
+  for(let j = 0;j< data[i].name.length ;j++){
+    //ALMACENA EN MINUSCULA LA PORCIÓN
+    porcion=data[i].name.substring(0,j+1).toLowerCase();
+    if(valorInput.toLowerCase()==porcion){
+      arrayBuscado.push(i);        
+     }
+  }
+}
+return arrayBuscado;
+}
 
 // Obtener una referencia al elemento canvas del DOM
 /* const grafica = document.querySelector("#grafica").getContext("2d");
