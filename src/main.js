@@ -68,7 +68,6 @@ function crearCerrar(newDiv){
     let cerrar=document.createElement("button");
     cerrar.classList.add('cerrar');
     newDiv.appendChild(cerrar);
-      
     cerrar.innerText = 'X';
     
 cerrar.addEventListener('click',()=>{
@@ -246,11 +245,18 @@ crearCerrar(datosDiv);
     contenedorImagenPatronus.classList.add('contenedorImagenPatronus');
     contenedorImagenPatronus.src = imgPatronus;
     
-  crearCerrar(patronusDiv);   
+    let cerrar=document.createElement("button");
+    cerrar.classList.add('cerrar');
+    divNomPatCerrar.appendChild(cerrar);
+    cerrar.innerText = 'X';
+    cerrar.addEventListener('click',()=>{
+      patronusDiv.style.display ='none'; 
+    });
     });     
   } 
   opcionPersonaje.classList.add('pintarOpcionNav');
 }
+
 
 let filtrarCasa=document.getElementById("casa");
 
