@@ -306,10 +306,10 @@ menuEspecie.addEventListener('mouseleave',()=>{
     menuAsc.style.display="none";
     menuBuscador.style.display="none"
     menuOrden.style.display="none";
-   })
+   });
   menuGenero.addEventListener('mouseleave',()=>{
      menuGenero.style.display="none";
-    })
+    });
 
   labelAscende.addEventListener('mouseenter',()=>{
     menuAsc.style.display="block";
@@ -318,10 +318,10 @@ menuEspecie.addEventListener('mouseleave',()=>{
     menuGenero.style.display="none";
     menuBuscador.style.display="none"
     menuOrden.style.display="none";
-     })
+     });
   menuAsc.addEventListener('mouseleave',()=>{
     menuAsc.style.display="none";
-      })
+      });
 
   labelBuscador.addEventListener('mouseenter',()=>{
     menuBuscador.style.display="block"
@@ -330,7 +330,7 @@ menuEspecie.addEventListener('mouseleave',()=>{
     menuEspecie.style.display="none";
     menuGenero.style.display="none";
     menuOrden.style.display="none";
-  })
+  });
 
   menuBuscador.addEventListener('mouseleave',()=>{
     menuBuscador.style.display="none";
